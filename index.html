@@ -10,9 +10,7 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
-            <img src="images/logo.png" alt="Logo">
-        </a>
+        <a href="#home" class="logo">VJ</a>
         <nav>
             <a href="#home" class="active">Home</a>
             <a href="#skills" >Skills</a>
@@ -24,7 +22,7 @@
     <!-- ===== HOME SECTION ===== -->
     <section id="home" class="home">
         <div class="home-img">
-            <img src="main.jpg" alt="">
+            <img src="main.jpg" alt="Vijay Kakade - DevOps and Cloud Engineer">
         </div>
         <div class="home-content">
             <h1>Hi, It's <span>Vijay - VJ</span></h1>
@@ -187,20 +185,67 @@
     <!-- Javascript code for Thank You Message after filling the form -->
     <script>
         const form = document.querySelector(".contact-form");
+        const submitBtn = form.querySelector("button[type='submit']");
+
+        // Client-side validation
+        function validateForm() {
+            const name = form.querySelector("input[name='name']").value.trim();
+            const email = form.querySelector("input[name='email']").value.trim();
+            const message = form.querySelector("textarea[name='message']").value.trim();
+
+            if (!name) {
+                alert("⚠️ Please enter your name.");
+                return false;
+            }
+
+            // Simple email regex validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("⚠️ Please enter a valid email address.");
+                return false;
+            }
+
+            if (message.length < 10) {
+                alert("⚠️ Your message must be at least 10 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const formData = new FormData(form);
-            const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { Accept: "application/json" },
-            });
 
-            if (response.ok) {
-            alert("✅ Thank you! Your message has been sent successfully.");
-            form.reset();
-            } else {
-            alert("❌ Oops! There was an error sending your message.");
+            // Validate before submission
+            if (!validateForm()) {
+                return;
+            }
+
+            // Show loading state
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Sending...";
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: { Accept: "application/json" },
+                });
+
+                if (response.ok) {
+                    alert("✅ Thank you! Your message has been sent successfully.");
+                    form.reset();
+                } else {
+                    alert("❌ Oops! There was an error sending your message. Please try again.");
+                }
+            } catch (error) {
+                alert("❌ Network error. Please check your connection and try again.");
+            } finally {
+                // Restore button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
         });
     </script>
