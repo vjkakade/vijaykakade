@@ -30,9 +30,8 @@ header{
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background: rgb(0 0 0 / 80%);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgb(183 75 75 / 10%);
+    background-color: transparent;
+    filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
