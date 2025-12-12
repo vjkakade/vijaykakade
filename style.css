@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 
 *{
     margin: 0;
@@ -7,7 +12,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html{
@@ -49,6 +54,20 @@ header{
     transform: scale(1.1);
 }
 
+/* Fix navbar logo size */
+.logo img {
+    height: 75px;    /* your preferred size */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Keep logo container aligned */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 nav a{
     font-size: 1.8rem;
     color: white;
@@ -64,7 +83,7 @@ nav a.active{
     border-bottom: 3px solid #b74b4b;
 }
 
-@media(width <=995px){
+@media(max-width:995px){
     nav{
         position: absolute;
         display: none;
@@ -76,7 +95,7 @@ nav a.active{
         border-bottom-left-radius: 2rem;
         padding: 1rem solid;
         background-color: #161616;
-        border-top: 0.1rem solid rgb(0 0 0 / 10%);
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
     }
 
     nav.active{
@@ -99,7 +118,7 @@ nav a.active{
 
 section{
     min-height: 100vh;
-    padding: 5rem 9%;
+    padding: 5rem 9% 5rem;
 }
 
 .home{
@@ -201,58 +220,65 @@ span{
     position: relative;
 }
 
-.typing-text span::before{
-    content: "software Developer";
-    color: #b74b4b;
-    animation: words 20s infinite;
+/* ===== Typing Animation Section ===== */
+.typing-text {
+  font-size: 34px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
-.typing-text span::after{
-    content: "";
-    background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8;
-    animation: cursor 0.6s infinite;
+.typing-text #typing {
+  color: #b74b4b;
+  border-right: 3px solid #b74b4b;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.6s step-end infinite alternate;
 }
 
-@keyframes cursor{
-    to{
-        border-left: 3px solid #b74b4b;
-    }
+/* Cursor blinking */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
-@keyframes words{
-    0%, 20%{
-        content: "Web Developer";
-    }
-
-    21%, 40%{
-        content: "Developer";
-    }
-
-    41%, 60%{
-        content: "Web Designer";
-    }
-
-    61%, 80%{
-        content: "Youtuber";
-    }
-
-    81%, 100%{
-        content: "Script Writer";
-    }
+/* Typing effect */
+@keyframes typing {
+  0% {
+    width: 0ch;
+    content: "DevOps Engineer";
+  }
+  30% {
+    width: 15ch;
+    content: "DevOps Engineer";
+  }
+  40% {
+    width: 0ch;
+    content: "Cloud Engineer";
+  }
+  70% {
+    width: 23ch;
+    content: "Cloud Engineer";
+  }
+  80% {
+    width: 0ch;
+    content: "Freelancer";
+  }
+  100% {
+    width: 11ch;
+    content: "Freelancer";
+  }
 }
 
-@media (width <= 1000px){
+@media (max-width: 1000px){
     .home{
         gap: 4rem;
     }
 }
 
-@media(width <=995px){
+@media(max-width:995px){
     .home{
         flex-direction: column;
         margin: 5rem 4rem;
@@ -269,5 +295,525 @@ span{
     .home-img img{
         width: 70vw;
         margin-top: 4rem;
+    }
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+  background-color: black;
+  padding: 6rem 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  /* min-height: auto; */
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #b74b4b;
+  border-radius: 2rem;
+  padding: 4rem 5rem;
+  width: 90%;
+  max-width: 1000px;
+  background-color: transparent;
+  color: white;
+  gap: 3rem;
+  transition: 0.4s ease;
+}
+
+.contact-container:hover {
+  box-shadow: 0 0 25px rgba(183, 75, 75, 0.4);
+  transform: translateY(-5px);
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail-icon {
+  font-size: 14rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #b74b4b; /* outlined mail icon */
+}
+
+.contact-right {
+  flex: 1;
+}
+
+.contact-right .heading {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.contact-right .heading span {
+  color: #b74b4b;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid #b74b4b;
+  background: transparent;
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 15px #b74b4b;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  background-color: black;
+  color: #b74b4b;
+  border: 2px solid #b74b4b;
+  border-radius: 4rem;
+  padding: 1rem 2.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #b74b4b;
+  color: black;
+  box-shadow: 0 0 25px #b74b4b;
+  transform: scale(1.05);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mail-icon {
+    font-size: 10rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-right .heading {
+    text-align: center;
+  }
+
+  .contact-form .btn {
+    align-self: center;
+  }
+}
+
+/* ================= SKILLS SECTION ================= */
+.skills {
+    min-height: 90vh;
+    background-color: black;
+    padding: 6rem 9%;
+    text-align: center;
+}
+
+.skills-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.skills-heading span {
+    color: #b74b4b;
+}
+
+.skills-subtext {
+    font-size: 1.8rem;
+    color: #aaaaaa;
+    margin: 1rem 0 4rem 0;
+}
+
+/* force 4 columns on desktop, responsive on smaller */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr)); /* 4 columns */
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;    /* keeps grid aligned under heading */
+  margin: 0 auto;       /* center grid */
+}
+
+/* fallback for narrow screens */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+}
+
+.skill-card {
+    background: #0a0a0a;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #111;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(183, 75, 75, 0.0);
+}
+
+.skill-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #b74b4b;
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.6);
+}
+
+/* vertical left label "Skills" */
+.skills {
+  position: relative; /* needed so label can be absolute */
+}
+
+/* the vertical label */
+.skills-side-label {
+  position: absolute;
+  left: 3.5rem;               /* distance from left page edge; tweak as needed */
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg); /* rotate to be vertical */
+  transform-origin: left center;
+  letter-spacing: 0.2rem;
+  color: #b74b4b;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: transparent;
+  padding: 0.4rem 0;
+  z-index: 10;
+}
+
+/* Add the little vertical divider line to mimic your earlier screenshot */
+.skills-side-label::after {
+  content: "";
+  display: block;
+  width: 120px;               /* length of underline line (horizontal because rotated) */
+  height: 3px;
+  background: #b74b4b;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+/* hide on small screens so it doesn't collide */
+@media (max-width: 900px) {
+  .skills-side-label {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .skills {
+    padding-left: 9%; /* your existing padding likely fine; increase slightly if overlap */
+  }
+}
+
+/* ================= PROJECTS SECTION ================= */
+.projects {
+    min-height: 70vh;
+    background: black;
+    padding: 6rem 9%;
+    text-align: center;
+}
+
+.projects-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.projects-heading span {
+    color: #b74b4b;
+}
+
+.projects-subtext {
+    font-size: 1.8rem;
+    color: #aaaaaa;
+    margin-bottom: 4rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ALWAYS 2 per row */
+    gap: 7rem;
+    align-items: stretch;
+    width: 60%;                   /* ⬅ reduced width */
+    min-height: 350px;            /* ⬅ increased height */
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #0a0a0a;
+    border: 2px solid #111;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    transition: 0.3s ease-out;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(183, 75, 75, 0.0);
+}
+
+.project-card:hover {
+    border-color: #b74b4b;
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.6);
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card p {
+    color: #cccccc;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    background: black;
+    color: #b74b4b;
+    border: 2px solid #b74b4b;
+    border-radius: 3rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.project-btn:hover {
+    background: #b74b4b;
+    color: black;
+    box-shadow: 0 0 20px #b74b4b;
+}
+
+/* ===========================
+   📱 FULL RESPONSIVE FIXES
+   =========================== */
+
+/* --- GLOBAL FIXES --- */
+@media (max-width: 768px) {
+
+  html {
+    font-size: 52%; /* smaller base font */
+  }
+
+  header {
+    padding: 1.5rem 5%;
+  }
+
+  nav a {
+    margin-left: 2rem;
+  }
+
+  /* HOME SECTION */
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+    padding-top: 10rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.4rem;
+  }
+
+  .home-content p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* SKILLS SECTION */
+  .skills-subtext {
+    width: 95%;
+    margin: 0 auto 3rem auto;
+    font-size: 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .skill-card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  /* PROJECTS SECTION */
+  .projects-container {
+    grid-template-columns: 1fr; /* one card per row */
+    width: 100%;
+    gap: 3rem;
+  }
+
+  .project-card {
+    padding: 2rem;
+  }
+
+  .project-card h3 {
+    font-size: 2rem;
+  }
+
+  .project-card p {
+    font-size: 1.4rem;
+  }
+
+  /* CONTACT SECTION */
+  .contact-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+
+  .mail-icon {
+    font-size: 8rem;
+  }
+
+  .contact-right .heading {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* HUGE PHONES FIX (MAX 480px) */
+@media (max-width: 480px) {
+
+  html {
+    font-size: 47%;
+  }
+
+  .home-img img {
+    width: 80vw;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 1 per row */
+  }
+
+  .projects-heading {
+    font-size: 3rem;
+  }
+
+  .projects-subtext {
+    font-size: 1.4rem;
+  }
+}
+
+/* Remove huge empty gaps between sections ONLY on mobile */
+@media (max-width: 768px) {
+    section {
+        min-height: 60vh !important;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .projects {
+        padding-bottom: 2rem !important;
+    }
+
+    .projects-container {
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Justify home section paragraphs ONLY on mobile */
+@media (max-width: 768px) {
+    .home-content p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+}
+
+/* Center the typing text ONLY on mobile */
+@media (max-width: 768px) {
+    .typing-text {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Fix typing text weird wrapping issue on mobile */
+@media (max-width: 768px) {
+
+    .typing-text {
+        font-size: 2.5rem;         /* smaller so long words fit */
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        white-space: nowrap;       /* PREVENT line break */
+        overflow: hidden;
+    }
+
+    #typing {
+        white-space: nowrap !important;   /* really force no wrapping */
+        display: inline-block;
+        max-width: 95vw;                  /* fit inside screen */
     }
 }
