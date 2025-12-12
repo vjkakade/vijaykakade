@@ -53,7 +53,7 @@ header{
 }
 
 .logo img {
-  height: 95px;
+  height: 110px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -836,7 +836,7 @@ span{
   }
 
   .logo img {
-    height: 50px;
+    height: 55px;
     width: auto;
   }
 
