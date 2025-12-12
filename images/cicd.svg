@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70">
-  <rect width="70" height="70" fill="#FF6B6B" rx="5"/>
-  <text x="35" y="40" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CI/CD</text>
-  <text x="35" y="55" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Pipeline</text>
-</svg>

@@ -66,7 +66,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 
 ## 📋 Project Structure
 
-```
+```text
 vijaykakade/
 ├── index.html                    # Main HTML with all sections
 ├── style.css                     # All styling (responsive design)
@@ -128,7 +128,9 @@ Or use Command Prompt instead (no policy change needed).
 ## 🎨 Customization
 
 ### Change Accent Color
+
 Search for `#b74b4b` in `style.css` and replace with your color:
+
 ```css
 /* Change from red-brown to blue */
 #0078D4  /* Azure Blue */
@@ -137,7 +139,9 @@ Search for `#b74b4b` in `style.css` and replace with your color:
 ```
 
 ### Update Typing Animation Roles
+
 Edit the `texts` array in `index.html` (around line 155):
+
 ```javascript
 const texts = [
     " DevOps Engineer",
@@ -150,7 +154,9 @@ const texts = [
 ```
 
 ### Update Skills
+
 Add/remove skill cards in the `.skills-grid` section:
+
 ```html
 <div class="skill-card">
     <img src="images/your-icon.svg" alt="Your Skill">
@@ -159,10 +165,13 @@ Add/remove skill cards in the `.skills-grid` section:
 ```
 
 ### Update Projects
+
 Modify project descriptions and links in the `.projects-container` section.
 
 ### Change Social Links
+
 Update URLs in `.social-icons` section:
+
 ```html
 <a href="https://your-profile-url" target="_blank">
     <i class="fa-brands fa-linkedin"></i>
@@ -183,11 +192,13 @@ The site is fully responsive with optimized layouts for:
 ## ✅ Quality Assurance
 
 ### Code Quality
+
 - **CSS Linting:** stylelint with `stylelint-config-standard`
 - **HTML Linting:** HTMLHint with best practices
 - **Zero dependency vulnerabilities** (npm audit: 0 found)
 
 ### Accessibility
+
 - ✅ Keyboard navigation support (Tab, Enter)
 - ✅ Visible focus states on all interactive elements
 - ✅ Descriptive alt text for all images
@@ -195,12 +206,14 @@ The site is fully responsive with optimized layouts for:
 - ✅ Color contrast compliant (WCAG AAA)
 
 ### Performance
+
 - ✅ Optimized SVG icons (<5KB each)
 - ✅ Optimized profile image (<100KB)
 - ✅ No unnecessary JavaScript
 - ✅ Smooth animations (60fps)
 
 ### Browser Support
+
 - ✅ Chrome (latest)
 - ✅ Firefox (latest)
 - ✅ Safari (latest)
@@ -210,6 +223,7 @@ The site is fully responsive with optimized layouts for:
 ## 📝 Testing
 
 See [TESTING.md](TESTING.md) for comprehensive testing guide including:
+
 - Cross-browser testing checklist
 - Form integration testing
 - Performance testing (Lighthouse)
@@ -218,6 +232,7 @@ See [TESTING.md](TESTING.md) for comprehensive testing guide including:
 - SEO optimization
 
 Quick test:
+
 ```powershell
 npm run lint              # Verify code quality
 python -m http.server    # Start local server
@@ -258,18 +273,22 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions and comparison of a
 The contact form uses **Formspree** (ID: `mgvrvelo`) for email delivery.
 
 ### Setup
-1. Visit https://formspree.io
+
+1. Visit [formspree.io](https://formspree.io)
 2. Verify the form is active
 3. Configure email forwarding
 4. Test form submission (see TESTING.md)
 
 ### Form Validation
+
 - Name: Required (non-empty)
-- Email: Must be valid format (user@domain.com)
+- Email: Must be valid format (user AT domain DOT com)
 - Message: Minimum 10 characters
 
 ### Troubleshooting
+
 If form doesn't work:
+
 1. Check Formspree dashboard settings
 2. Verify spam/junk folder for test emails
 3. Test in browser console (see TESTING.md)
@@ -330,8 +349,8 @@ Open source. Feel free to use as inspiration for your own portfolio.
 ## 📞 Contact
 
 - **Email:** Via contact form on the site
-- **LinkedIn:** https://www.linkedin.com/in/vjkakade/
-- **GitHub:** https://github.com/vjkakade
+- **LinkedIn:** [linkedin.com/in/vjkakade](https://www.linkedin.com/in/vjkakade/)
+- **GitHub:** [github.com/vjkakade](https://github.com/vjkakade)
 - **Twitter:** (Update in HTML)
 
 ---

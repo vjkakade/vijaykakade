@@ -5,17 +5,20 @@
 Test the portfolio on these browsers and devices:
 
 ### Desktop Browsers
+
 - [ ] Chrome (latest version)
 - [ ] Firefox (latest version)
 - [ ] Safari (latest version on macOS)
 - [ ] Edge (latest version)
 
 ### Mobile Browsers
+
 - [ ] Chrome Mobile (iOS and Android)
 - [ ] Safari Mobile (iOS)
 - [ ] Firefox Mobile (Android)
 
 ### Screen Sizes to Test
+
 - [ ] Desktop: 1920x1080 (large desktop)
 - [ ] Laptop: 1366x768 (medium desktop)
 - [ ] Tablet: 768x1024 (iPad)
@@ -24,24 +27,28 @@ Test the portfolio on these browsers and devices:
 
 ### Critical Features to Check on Each Browser
 
-**Home Section**
+#### Home Section
+
 - [ ] Profile image displays correctly (circular, glowing effect)
 - [ ] Typing animation works smoothly (DevOps Engineer → Cloud Engineer → etc.)
 - [ ] Social media icons are clickable and properly colored
 - [ ] "Hire me" button has hover effects
 
-**Skills Section**
+#### Skills Section
+
 - [ ] Skill cards display in correct grid (4 columns desktop, 2 columns mobile)
 - [ ] Skill icons (SVG) load and display correctly
 - [ ] Hover effects work (glow, translateY lift)
 - [ ] Side label "Skills" rotates vertically and displays properly
 
-**Projects Section**
+#### Projects Section
+
 - [ ] Project cards stack vertically on mobile, side-by-side on desktop
 - [ ] Demo Video and GitHub Repo links work and open in new tab
 - [ ] Text wrapping is proper (no overflow)
 
-**Contact Section**
+#### Contact Section
+
 - [ ] Form fields are properly aligned and responsive
 - [ ] Form validation works:
   - [ ] Blank name shows error
@@ -51,7 +58,8 @@ Test the portfolio on these browsers and devices:
 - [ ] Form submission succeeds and shows success message
 - [ ] Form resets after successful submission
 
-**Navigation**
+#### Navigation
+
 - [ ] Links navigate to correct sections smoothly
 - [ ] Active link shows correct highlight/underline
 - [ ] Mobile nav dropdown appears on screens ≤995px
@@ -63,10 +71,11 @@ Test the portfolio on these browsers and devices:
 
 The portfolio uses **Formspree** (ID: `mgvrvelo`) for form submissions.
 
-#### Test Steps:
+#### Test Steps
 
 1. **Fill out the contact form:**
-   ```
+
+   ```text
    Name: John Doe
    Email: john@example.com
    Message: This is a test message to verify the form is working correctly.
@@ -79,19 +88,20 @@ The portfolio uses **Formspree** (ID: `mgvrvelo`) for form submissions.
    - [ ] Form fields clear automatically
 
 3. **Check email:**
-   - [ ] Email arrives in Formspree dashboard (https://formspree.io)
+   - [ ] Email arrives in Formspree dashboard ([formspree.io](https://formspree.io))
    - [ ] Email appears in your configured email address
    - [ ] Sender name and message content are correct
 
-#### If Form Doesn't Work:
+#### If Form Doesn't Work
 
 1. **Verify Formspree integration:**
-   - Go to https://formspree.io
+   - Go to [formspree.io](https://formspree.io)
    - Sign in with your account
    - Confirm form ID `mgvrvelo` is active
    - Check that emails are forwarding to the correct address
 
 2. **Test in browser console:**
+
    ```javascript
    // Test if Formspree endpoint is accessible
    fetch("https://formspree.io/f/mgvrvelo", {
@@ -110,12 +120,14 @@ The portfolio uses **Formspree** (ID: `mgvrvelo`) for form submissions.
 ### Client-Side Validation Test
 
 The form includes validation for:
+
 - **Name:** Required (non-empty)
 - **Email:** Must match email format (regex: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`)
 - **Message:** Minimum 10 characters
 
 Test each validation:
-```
+
+```text
 1. Submit with no name → Should show: "⚠️ Please enter your name."
 2. Submit with invalid email → Should show: "⚠️ Please enter a valid email address."
 3. Submit with message <10 chars → Should show: "⚠️ Your message must be at least 10 characters long."
@@ -189,7 +201,7 @@ Use Chrome DevTools > Network tab:
 - [ ] Open Graph meta tags for social sharing (optional)
 - [ ] Structured data (JSON-LD) for organization (optional)
 
-### Add to HTML `<head>` (Optional):
+### Add to HTML `<head>` (Optional)
 
 ```html
 <meta name="description" content="DevOps engineer with 12+ years of experience in cloud infrastructure, automation, and CI/CD. Check out my portfolio showcasing Azure, AWS, GCP projects.">

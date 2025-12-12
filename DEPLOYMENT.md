@@ -3,30 +3,35 @@
 ## Local Development
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - npm (comes with Node.js)
 
 ### Setup
 
 1. **Navigate to project directory:**
+
    ```powershell
    cd c:\Users\Vijay Kakade\Downloads\vijaykakade
    ```
 
 2. **Install dependencies:**
+
    ```powershell
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
    npm install
    ```
 
 3. **Run linting to verify code quality:**
+
    ```powershell
    npm run lint
    ```
 
 4. **Start a local web server** (choose one):
-   
+
    **Option A: Using Python (if installed):**
+
    ```powershell
    python -m http.server 8000
    # Opens at http://localhost:8000
@@ -35,9 +40,10 @@
    **Option B: Using VS Code Live Server Extension:**
    - Install "Live Server" by Ritwick Dey
    - Right-click `index.html` → "Open with Live Server"
-   - Automatically opens at http://127.0.0.1:5500
+   - Automatically opens at <http://127.0.0.1:5500>
 
    **Option C: Using Node.js http-server:**
+
    ```powershell
    npm install -g http-server
    http-server
@@ -49,12 +55,13 @@
 ### Option 1: GitHub Pages (Free & Easy)
 
 1. **Create a GitHub repository:**
-   - Go to https://github.com/new
+   - Go to <https://github.com/new>
    - Name it `vijaykakade.github.io` (or any name)
    - Set to Public
    - Create repository
 
 2. **Push your code:**
+
    ```powershell
    git init
    git add .
@@ -76,7 +83,7 @@
 
 ### Option 2: Netlify (Free with Auto-Deploy)
 
-1. **Sign up at https://netlify.com**
+1. **Sign up at <https://netlify.com>**
 
 2. **Connect GitHub repository:**
    - Click "New site from Git"
@@ -96,7 +103,7 @@
 
 ### Option 3: Vercel (Free & Simple)
 
-1. **Sign up at https://vercel.com**
+1. **Sign up at <https://vercel.com>**
 
 2. **Import project:**
    - Click "New Project"
@@ -112,11 +119,13 @@
 ### Option 4: Traditional Web Hosting (Paid)
 
 Popular options:
+
 - **Bluehost, SiteGround, GoDaddy** - Standard shared hosting (~$5-15/month)
 - **AWS S3 + CloudFront** - Object storage + CDN (~$1-5/month)
 - **DigitalOcean App Platform** - Simple app hosting (~$5-12/month)
 
 Steps (vary by provider):
+
 1. Buy hosting plan and domain
 2. Upload files via FTP or file manager
 3. Point domain DNS to hosting provider
@@ -124,12 +133,14 @@ Steps (vary by provider):
 
 ## Custom Domain Setup
 
-### For GitHub Pages:
+### For GitHub Pages
+
 1. Go to Repository Settings → Pages
 2. Under "Custom domain", enter your domain (e.g., `vijaykakade.com`)
 3. DNS pointing instructions appear
 4. Update DNS at your domain registrar (GoDaddy, Namecheap, etc.):
-   ```
+
+   ```text
    A Records:
    185.199.108.153
    185.199.109.153
@@ -140,7 +151,8 @@ Steps (vary by provider):
    www → YOUR_USERNAME.github.io
    ```
 
-### For Netlify/Vercel:
+### For Netlify/Vercel
+
 1. Connect custom domain in dashboard
 2. Follow provider's DNS instructions
 3. Usually just add CNAME pointing to their servers
@@ -149,17 +161,19 @@ Steps (vary by provider):
 
 The contact form uses Formspree ID: `mgvrvelo`
 
-### Verify It's Working:
+### Verify It's Working
+
 1. Fill out the contact form on your site
 2. Click "Send"
 3. Check your email (configure in Formspree dashboard)
 4. If you don't receive emails, troubleshoot:
-   - Login to https://formspree.io
+   - Login to <https://formspree.io>
    - Check form settings
    - Ensure email forwarding is enabled
    - Test submission on Formspree website directly
 
-### Alternative Form Services:
+### Alternative Form Services
+
 - **FormSubmit.co** - Free, no signup needed
 - **Basin** - Free form hosting
 - **Stripe Billing** - For payment forms
@@ -168,16 +182,19 @@ The contact form uses Formspree ID: `mgvrvelo`
 ## SEO & Analytics Setup (Optional)
 
 ### Google Search Console
-1. Go to https://search.google.com/search-console
+
+1. Go to <https://search.google.com/search-console>
 2. Add property (your domain)
 3. Verify ownership (DNS or HTML tag)
 4. Submit sitemap (optional for static sites)
 5. Monitor search performance
 
 ### Google Analytics
-1. Go to https://analytics.google.com
+
+1. Go to <https://analytics.google.com>
 2. Create new property
 3. Add tracking code to `<head>`:
+
    ```html
    <!-- Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -188,10 +205,13 @@ The contact form uses Formspree ID: `mgvrvelo`
      gtag('config', 'GA_MEASUREMENT_ID');
    </script>
    ```
+
    Replace `GA_MEASUREMENT_ID` with your ID
 
 ### Meta Tags for Social Sharing
+
 Already should be in HTML `<head>` or add:
+
 ```html
 <meta property="og:title" content="Vijay Kakade - DevOps & Cloud Engineer">
 <meta property="og:description" content="12+ years DevOps/Cloud infrastructure expertise">
@@ -202,13 +222,15 @@ Already should be in HTML `<head>` or add:
 
 ## Maintenance & Updates
 
-### Regular Checks:
+### Regular Checks
+
 - **Monthly:** Test form submissions work
 - **Quarterly:** Run Lighthouse audit (DevTools)
 - **Quarterly:** Check external links still work
 - **Annually:** Update projects, skills, bio
 
-### Update Workflow:
+### Update Workflow
+
 ```powershell
 # Make changes locally
 # Test with npm run lint
@@ -223,12 +245,14 @@ git push origin main
 ## Troubleshooting
 
 ### Form Not Sending
-- [ ] Check Formspree dashboard: https://formspree.io
+
+- [ ] Check Formspree dashboard: <https://formspree.io>
 - [ ] Verify form endpoint is correct: `mgvrvelo`
 - [ ] Test in browser console (see TESTING.md)
 - [ ] Check spam/junk email folder
 
 ### Linting Errors
+
 ```powershell
 # Check for issues
 npm run lint
@@ -238,12 +262,14 @@ npx stylelint "**/*.css" --fix
 ```
 
 ### Images Not Loading
+
 - [ ] Check file paths are relative (`images/azure.svg` not `/images/...`)
 - [ ] Verify files exist in `images/` folder
 - [ ] Check browser console for 404 errors (F12 → Console)
 - [ ] Ensure SVG files are in correct format
 
 ### Mobile Layout Broken
+
 - [ ] Check viewport meta tag exists: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 - [ ] Test with DevTools (F12 → Toggle device toolbar)
 - [ ] Check CSS media queries (see style.css)
@@ -256,6 +282,7 @@ npx stylelint "**/*.css" --fix
    - Consider WebP format for future
 
 2. **Minify CSS/JS** (optional):
+
    ```powershell
    npm install -g cleancss-cli uglify-js
    cleancss style.css -o style.min.css
@@ -272,6 +299,7 @@ npx stylelint "**/*.css" --fix
 ## Summary
 
 **Quick Setup:**
+
 ```powershell
 npm install
 npm run lint
@@ -280,11 +308,13 @@ python -m http.server 8000
 ```
 
 **Quick Deploy:**
+
 - GitHub Pages (free): Push to `gh-pages` branch
 - Netlify (free): Connect GitHub repo
 - Vercel (free): Connect GitHub repo
 
 **Test Before Going Live:**
+
 - Run `npm run lint` (0 errors)
 - Test form on all browsers
 - Test on mobile devices
