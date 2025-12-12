@@ -10,33 +10,199 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Vijay Kakade</a>
-
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </a>
         <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="#" >Services</a>
-            <a href="#" >Skills</a>
-            <a href="#" >Education</a>
-            <a href="#" >Experience</a>
-            <a href="#" >Contact</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#skills" >Skills</a>
+            <a href="#projects" >Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section class="home">
+
+    <!-- ===== HOME SECTION ===== -->
+    <section id="home" class="home">
         <div class="home-img">
             <img src="main.jpg" alt="">
         </div>
         <div class="home-content">
-            <h1>Hi, It's <span>Vijay (VJ)</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <h1>Hi, It's <span>Vijay - VJ</span></h1>
+            <h3 class="typing-text">I'm a&nbsp;<span id="typing"></span></h3>
+            <p> I'm Vijay Kakade, Experienced IT Professional with 12+ years in infrastructure, cloud, and DevOps. Skilled in managing multi-platform environments (Windows, Linux, mainframe) and delivering global IT solutions.</p>
+            <p> Expertise in server infrastructure, virtualization, networking, security, and databases across healthcare and supply chain sectors. </p>
+            <p> Strong background in deploying and maintaining hardware, software, and IT systems for high-performance environments.</p>
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/vjkakade/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/vjkakade" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <a href="#" class="btn">Hire me</a>
+            <a href="#contact" class="btn">Hire me</a>
         </div>
     </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="skills">
+        <div class="skills-side-label">Skills</div>
+        <h2 class="skills-heading">Skills & <span>Expertise</span></h2>
+        <p class="skills-subtext">
+            Tools and technologies I use to build scalable and automated cloud environments.<br>
+            My expertise spans multi-cloud platforms, CI/CD automation, and Infrastructure as Code.<br>
+            I focus on delivering reliable, secure, and production-ready solutions.
+        </p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="images/azure.png" alt="Azure">
+                <p>Azure</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/aws.png" alt="AWS">
+                <p>AWS</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/gcp.png" alt="GCP">
+                <p>GCP</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/azure-devops.png" alt="Azure DevOps">
+                <p>Azure DevOps</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/jenkins.png" alt="Jenkins">
+                <p>Jenkins</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/github.png" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/terraform.png" alt="Terraform">
+                <p>Terraform</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/cicd.png" alt="CI/CD">
+                <p>CI/CD Pipelines</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="projects">
+        <h2 class="projects-heading">My <span>Projects</span></h2>
+        <p class="projects-subtext">
+            A collection of my hands-on DevOps, Cloud & Automation work.
+        </p>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Multi-Cloud Infra Deployment using Terraform & Azure DevOps</h3>
+                    <p>
+                        A fully automated CI/CD pipeline where Azure DevOps triggers Terraform code 
+                        to deploy infrastructure across Azure, AWS, and GCP.  
+                        Includes dynamic modules, backend state management, YAML pipelines, 
+                        and production-grade IaC workflows.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://drive.google.com/file/d/1ivDhKmfAY2mlGXH6MnDMe04hkgXalMOT/view?usp=sharing" class="btn project-btn" target="_blank">Demo Video</a>
+                        <a href="https://github.com/vjkakade/FinMin_Fork" class="btn project-btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Production-Grade Azure Infrastructure with Terraform (with Auto-scaling)</h3>
+                    <p>
+                        This project demonstrates how to build a production-grade Azure cloud infrastructure using Terraform, featuring a fully automated deployment pipeline and real-time CPU-based autoscaling.
+                        It provisions an enterprise-ready architecture including Virtual Network, NAT Gateway, Network Security Groups, a public-facing Load Balancer, and a Virtual Machine Scale Set (VMSS) running Apache
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://drive.google.com/file/d/1h4K0wPLhHXxQ_QIAMPJsARQxoSln7ULI/view?usp=sharing" class="btn project-btn" target="_blank">Demo Video</a>
+                        <a href="https://github.com/rituraj12/azure-production-infra-terraform/" class="btn project-btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-left">
+            <i class="fa-solid fa-envelope mail-icon"></i>
+            </div>
+
+            <div class="contact-right">
+            <h2 class="heading">Get in <span>Touch</span></h2>
+            <form action="https://formspree.io/f/mgvrvelo" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Javascript code for typing animation -->
+    <script>
+        const texts = [
+            " DevOps Engineer",
+            " Cloud Engineer - Multi Cloud (Azure, AWS, GCP)",
+            " Infrastructure Specialist",
+            " Trekker",
+            " Mountain Biker",
+            " Freelancer"
+        ];
+        let index = 0;
+        let charIndex = 0;
+        let currentText = "";
+        let isDeleting = false;
+        const typingSpan = document.getElementById("typing");
+        function typeEffect() {
+            currentText = texts[index];
+            if (isDeleting) {
+            typingSpan.textContent = currentText.substring(0, charIndex--);
+            } else {
+            typingSpan.textContent = currentText.substring(0, charIndex++);
+            }
+            if (!isDeleting && charIndex === currentText.length) {
+            // pause before deleting
+            setTimeout(() => (isDeleting = true), 1000);
+            } else if (isDeleting && charIndex === 0) {
+            // move to next word
+            isDeleting = false;
+            index = (index + 1) % texts.length;
+            }
+            const speed = isDeleting ? 50 : 100; // speed of typing/deleting
+            setTimeout(typeEffect, speed);
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+    </script>
+
+    <!-- Javascript code for Thank You Message after filling the form -->
+    <script>
+        const form = document.querySelector(".contact-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+            alert("✅ Thank you! Your message has been sent successfully.");
+            form.reset();
+            } else {
+            alert("❌ Oops! There was an error sending your message.");
+            }
+        });
+    </script>
 </body>
 </html>
