@@ -76,6 +76,10 @@ nav a.active {
   border-bottom: 3px solid #b74b4b;
 }
 
+nav a:hover {
+  background-color: rgba(183, 75, 75, 0.1);
+}
+
 nav a:focus {
   outline: 2px solid #b74b4b;
   outline-offset: 2px;
@@ -111,6 +115,7 @@ nav a:focus {
         padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid #b74b4b;
+        background-color: rgba(183, 75, 75, 0.1);
     }
 }
 
