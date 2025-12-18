@@ -21,6 +21,26 @@
         </nav>
     </header>
 
+    <!-- Left Sidebar Navigation -->
+    <nav class="left-nav">
+        <a href="#home" class="nav-link active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#skills" class="nav-link" data-section="skills">
+            <i class="fas fa-tools"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#projects" class="nav-link" data-section="projects">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#contact" class="nav-link" data-section="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
     <!-- ===== HOME SECTION ===== -->
     <section id="home" class="home">
         <div class="home-img">
@@ -249,6 +269,44 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
+        });
+    </script>
+
+    <!-- JavaScript for Left Navigation Active State -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const headerNavLinks = document.querySelectorAll('header nav a');
+            const sections = document.querySelectorAll('section');
+
+            function updateActiveLink() {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === current) {
+                        link.classList.add('active');
+                    }
+                });
+
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Initial call
         });
     </script>
 </body>
