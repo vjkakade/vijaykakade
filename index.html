@@ -81,14 +81,6 @@
     }
     </script>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <p>Loading...</p>
-        </div>
-    </div>
-
     <header>
         <a href="#" class="logo">
             <img src="images/logo.png" alt="Logo">
@@ -386,36 +378,6 @@
                     .catch(error => {
                         console.log('Service Worker registration failed:', error);
                     });
-            });
-        }
-    </script>
-
-    <!-- Loading Animation -->
-    <script>
-        // Function to hide loader
-        function hideLoader() {
-            const loader = document.querySelector('.loader');
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
-        }
-
-        // Hide loader when page loads
-        window.addEventListener('load', hideLoader);
-
-        // Fallback: hide loader after 3 seconds if load event doesn't fire
-        setTimeout(hideLoader, 3000);
-
-        // Also hide loader when DOM is ready (for faster loading)
-        if (document.readyState === 'complete') {
-            hideLoader();
-        } else {
-            document.addEventListener('DOMContentLoaded', () => {
-                // Small delay to ensure everything is rendered
-                setTimeout(hideLoader, 100);
             });
         }
     </script>
