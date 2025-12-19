@@ -320,6 +320,7 @@ span{
   justify-content: center;
   align-items: center;
   min-height: 90vh;
+  position: relative;
 
   /* min-height: auto; */
 }
@@ -568,12 +569,82 @@ span{
   }
 }
 
+/* Projects side label */
+.projects-side-label {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  letter-spacing: 0.2rem;
+  color: #b74b4b;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: transparent;
+  padding: 0.4rem 0;
+  z-index: 10;
+}
+
+.projects-side-label::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #b74b4b;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Contact side label */
+.contact-side-label {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  letter-spacing: 0.2rem;
+  color: #b74b4b;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: transparent;
+  padding: 0.4rem 0;
+  z-index: 10;
+}
+
+.contact-side-label::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #b74b4b;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Hide side labels on small screens */
+@media (width <= 900px) {
+  .projects-side-label,
+  .contact-side-label {
+    display: none;
+  }
+}
+
+@media (width >= 901px) {
+  .projects {
+    padding-left: 9%;
+  }
+  .contact {
+    padding-left: 9%;
+  }
+}
+
 /* ================= PROJECTS SECTION ================= */
 .projects {
     min-height: 70vh;
     background: black;
     padding: 6rem 9%;
     text-align: center;
+    position: relative;
 }
 
 .projects-heading {
