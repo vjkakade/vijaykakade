@@ -392,14 +392,32 @@
 
     <!-- Loading Animation -->
     <script>
-        window.addEventListener('load', () => {
+        // Function to hide loader
+        function hideLoader() {
             const loader = document.querySelector('.loader');
             if (loader) {
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
                 }, 500);
-            }        }
+            }
+        }
+
+        // Hide loader when page loads
+        window.addEventListener('load', hideLoader);
+
+        // Fallback: hide loader after 3 seconds if load event doesn't fire
+        setTimeout(hideLoader, 3000);
+
+        // Also hide loader when DOM is ready (for faster loading)
+        if (document.readyState === 'complete') {
+            hideLoader();
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                // Small delay to ensure everything is rendered
+                setTimeout(hideLoader, 100);
+            });
+        }
     </script>
 </body>
 </html>
