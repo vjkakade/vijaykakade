@@ -1,0 +1,24 @@
+{
+  "name": "Vijay Kakade - DevOps Engineer",
+  "short_name": "Vijay Kakade",
+  "description": "Portfolio of Vijay Kakade, DevOps Engineer & Cloud Architect",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#b74b4b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
