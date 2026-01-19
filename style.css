@@ -1,9 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
 html {
-  /* Fluid font scaling: 58.5% at 768px, 62.5% at 1200px, 64% at 1600px+ */
-  font-size: clamp(58.5%, 3.5vw, 64%);
+  font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+/* ===== FIXED BREAKPOINTS FOR CONSISTENT EXPERIENCE ===== */
+/* 768px tablets */
+@media (width >= 768px) and (width < 1024px) {
+  html { font-size: 60%; }
+}
+
+/* 1024px tablets */
+@media (width >= 1024px) and (width < 1280px) {
+  html { font-size: 61%; }
+}
+
+/* 1280px small desktop */
+@media (width >= 1280px) and (width < 1440px) {
+  html { font-size: 62%; }
+}
+
+/* 1440px standard desktop */
+@media (width >= 1440px) and (width < 1600px) {
+  html { font-size: 62.5%; }
+}
+
+/* 1600px large desktop */
+@media (width >= 1600px) and (width < 1920px) {
+  html { font-size: 63%; }
+}
+
+/* 1920px+ ultra wide */
+@media (width >= 1920px) {
+  html { font-size: 64%; }
 }
 
 * {
@@ -129,18 +159,45 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(2rem, 5vw, 8rem);
+    gap: 8rem;
     background-color: black;
-    max-width: 1600px;
-    margin: 0 auto;
+}
+
+/* Responsive gaps for home section */
+@media (width >= 768px) and (width < 1024px) {
+  .home { gap: 5rem; }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .home { gap: 6rem; }
+}
+
+@media (width >= 1280px) {
+  .home { gap: 8rem; }
 }
 
 .home .home-content h1{
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -1px;
     text-shadow: 0 2px 10px rgb(183 75 75 / 20%);
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .home .home-content h1 { font-size: 5rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .home .home-content h1 { font-size: 5.5rem; }
+}
+
+@media (width >= 1440px) {
+  .home .home-content h1 { font-size: 6rem; }
+}
+
+@media (width >= 1920px) {
+  .home .home-content h1 { font-size: 6.5rem; }
 }
 
 span{
@@ -148,17 +205,49 @@ span{
 }
 
 .home-content h3{
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: #b74b4b;
 }
 
+@media (width >= 768px) and (width < 1024px) {
+  .home-content h3 { font-size: 2.8rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .home-content h3 { font-size: 3.2rem; }
+}
+
+@media (width >= 1440px) {
+  .home-content h3 { font-size: 4rem; }
+}
+
+@media (width >= 1920px) {
+  .home-content h3 { font-size: 4.5rem; }
+}
+
 .home-content p{
-    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-size: 1.6rem;
     line-height: 1.8;
     color: #ccc;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .home-content p { font-size: 1.5rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .home-content p { font-size: 1.55rem; }
+}
+
+@media (width >= 1440px) {
+  .home-content p { font-size: 1.6rem; }
+}
+
+@media (width >= 1920px) {
+  .home-content p { font-size: 1.7rem; }
 }
 
 .home-img{
@@ -167,11 +256,29 @@ span{
 
 .home-img img{
     position: relative;
-    width: clamp(200px, 32vw, 400px);
+    width: 32vw;
+    min-width: 250px;
+    max-width: 450px;
     border-radius: 50%;
     box-shadow: 0 0 30px rgb(183 75 75 / 40%), inset 0 0 30px rgb(183 75 75 / 10%);
     cursor: pointer;
     transition: all 0.4s ease;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .home-img img { width: 35vw; min-width: 220px; max-width: 350px; }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .home-img img { width: 33vw; min-width: 280px; max-width: 400px; }
+}
+
+@media (width >= 1280px) {
+  .home-img img { width: 32vw; min-width: 300px; max-width: 450px; }
+}
+
+@media (width >= 1920px) {
+  .home-img img { width: 30vw; min-width: 350px; max-width: 500px; }
 }
 
 .home-img img:hover{
@@ -318,14 +425,28 @@ span{
 /* ===== CONTACT SECTION ===== */
 .contact {
   background-color: black;
-  padding: clamp(4rem, 6vw, 8rem) 9%;
+  padding: 6rem 9%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 90vh;
   position: relative;
-  max-width: 1600px;
-  margin: 0 auto;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .contact { padding: 5rem 9%; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .contact { padding: 5.5rem 9%; }
+}
+
+@media (width >= 1440px) {
+  .contact { padding: 6rem 9%; }
+}
+
+@media (width >= 1920px) {
+  .contact { padding: 7rem 9%; }
 }
 
 .contact-container {
@@ -334,14 +455,46 @@ span{
   justify-content: space-between;
   border: 2px solid #b74b4b;
   border-radius: 2rem;
-  padding: clamp(2.5rem, 5vw, 5rem);
+  padding: 4rem 5rem;
   width: 90%;
   max-width: 1200px;
   background: linear-gradient(135deg, rgb(10 10 10 / 80%) 0%, rgb(17 17 17 / 80%) 100%);
   color: white;
-  gap: clamp(2rem, 4vw, 4rem);
+  gap: 3rem;
   transition: all 0.4s ease;
   box-shadow: 0 10px 40px rgb(183 75 75 / 15%);
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .contact-container { 
+    padding: 3rem 3.5rem;
+    gap: 2.5rem;
+    max-width: 1000px;
+  }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .contact-container { 
+    padding: 3.5rem 4rem;
+    gap: 2.8rem;
+    max-width: 1100px;
+  }
+}
+
+@media (width >= 1280px) {
+  .contact-container { 
+    padding: 4rem 5rem;
+    gap: 3rem;
+    max-width: 1200px;
+  }
+}
+
+@media (width >= 1920px) {
+  .contact-container { 
+    padding: 5rem 6rem;
+    gap: 4rem;
+    max-width: 1400px;
+  }
 }
 
 .contact-container:hover {
@@ -368,10 +521,26 @@ span{
 }
 
 .contact-right .heading {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: 3.5rem;
   margin-bottom: 2rem;
   font-weight: 700;
   text-align: left;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .contact-right .heading { font-size: 2.8rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .contact-right .heading { font-size: 3rem; }
+}
+
+@media (width >= 1440px) {
+  .contact-right .heading { font-size: 3.5rem; }
+}
+
+@media (width >= 1920px) {
+  .contact-right .heading { font-size: 4rem; }
 }
 
 .contact-right .heading span {
@@ -462,18 +631,48 @@ span{
 .skills {
   min-height: 90vh;
   background-color: black;
-  padding: clamp(4rem, 6vw, 8rem) 9%;
+  padding: 6rem 9%;
   text-align: center;
   position: relative;
-  max-width: 1600px;
-  margin: 0 auto;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .skills { padding: 5rem 9%; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .skills { padding: 5.5rem 9%; }
+}
+
+@media (width >= 1440px) {
+  .skills { padding: 6rem 9%; }
+}
+
+@media (width >= 1920px) {
+  .skills { padding: 7rem 9%; }
 }
 
 
 .skills-heading {
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: 4rem;
     font-weight: 700;
     color: white;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .skills-heading { font-size: 3rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .skills-heading { font-size: 3.5rem; }
+}
+
+@media (width >= 1440px) {
+  .skills-heading { font-size: 4rem; }
+}
+
+@media (width >= 1920px) {
+  .skills-heading { font-size: 4.5rem; }
 }
 
 .skills-heading span {
@@ -481,25 +680,69 @@ span{
 }
 
 .skills-subtext {
-    font-size: clamp(1.3rem, 2vw, 1.9rem);
+    font-size: 1.8rem;
     color: #aaa;
-    margin: 1rem 0 clamp(2rem, 4vw, 4rem);
+    margin: 1rem 0 4rem;
 }
 
-/* Responsive columns: 4 on desktop, 5 on large screens, adjusts with gap */
+@media (width >= 768px) and (width < 1024px) {
+  .skills-subtext { font-size: 1.5rem; margin: 1rem 0 3rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .skills-subtext { font-size: 1.6rem; margin: 1rem 0 3.5rem; }
+}
+
+@media (width >= 1440px) {
+  .skills-subtext { font-size: 1.8rem; margin: 1rem 0 4rem; }
+}
+
+@media (width >= 1920px) {
+  .skills-subtext { font-size: 1.9rem; margin: 1rem 0 4.5rem; }
+}
+
+/* Responsive columns: 4 on desktop, 5 on 1600px+, adjusts with gap */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap: clamp(1.5rem, 3vw, 3.5rem);
+  gap: 3rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* 5 columns on screens wider than 1400px */
-@media (width >= 1400px) {
+@media (width >= 768px) and (width < 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 2.2rem;
+  }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+@media (width >= 1280px) and (width < 1600px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 2.8rem;
+  }
+}
+
+@media (width >= 1600px) {
   .skills-grid {
     grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 3rem;
+  }
+}
+
+@media (width >= 1920px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, minmax(170px, 1fr));
+    gap: 3.5rem;
   }
 }
 
@@ -654,17 +897,47 @@ span{
 .projects {
     min-height: 70vh;
     background: black;
-    padding: clamp(4rem, 6vw, 8rem) 9%;
+    padding: 6rem 9%;
     text-align: center;
     position: relative;
-    max-width: 1600px;
-    margin: 0 auto;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .projects { padding: 5rem 9%; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .projects { padding: 5.5rem 9%; }
+}
+
+@media (width >= 1440px) {
+  .projects { padding: 6rem 9%; }
+}
+
+@media (width >= 1920px) {
+  .projects { padding: 7rem 9%; }
 }
 
 .projects-heading {
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: 4rem;
     font-weight: 700;
     color: white;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .projects-heading { font-size: 3rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .projects-heading { font-size: 3.5rem; }
+}
+
+@media (width >= 1440px) {
+  .projects-heading { font-size: 4rem; }
+}
+
+@media (width >= 1920px) {
+  .projects-heading { font-size: 4.5rem; }
 }
 
 .projects-heading span {
@@ -672,30 +945,95 @@ span{
 }
 
 .projects-subtext {
-    font-size: clamp(1.3rem, 2vw, 1.9rem);
+    font-size: 1.8rem;
     color: #aaa;
-    margin-bottom: clamp(2rem, 4vw, 4rem);
+    margin-bottom: 4rem;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .projects-subtext { font-size: 1.5rem; margin-bottom: 3rem; }
+}
+
+@media (width >= 1024px) and (width < 1440px) {
+  .projects-subtext { font-size: 1.6rem; margin-bottom: 3.5rem; }
+}
+
+@media (width >= 1440px) {
+  .projects-subtext { font-size: 1.8rem; margin-bottom: 4rem; }
+}
+
+@media (width >= 1920px) {
+  .projects-subtext { font-size: 1.9rem; margin-bottom: 4.5rem; }
 }
 
 .projects-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(3rem, 5vw, 7rem);
+    gap: 7rem;
     align-items: stretch;
-    width: clamp(80%, 90%, 100%);
+    width: 90%;
     max-width: 1200px;
     min-height: 350px;
     margin: 0 auto;
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .projects-container {
+    gap: 4rem;
+    width: 95%;
+    max-width: 1000px;
+  }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .projects-container {
+    gap: 5.5rem;
+    width: 92%;
+    max-width: 1100px;
+  }
+}
+
+@media (width >= 1280px) {
+  .projects-container {
+    gap: 7rem;
+    width: 90%;
+    max-width: 1200px;
+  }
+}
+
+@media (width >= 1920px) {
+  .projects-container {
+    gap: 8rem;
+    width: 88%;
+    max-width: 1400px;
+  }
 }
 
 .project-card {
     background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
     border: 2px solid #1a1a1a;
     border-radius: 1.5rem;
-    padding: clamp(1.5rem, 4vw, 3rem);
+    padding: 3rem;
     transition: all 0.4s ease;
     text-align: left;
     box-shadow: 0 5px 15px rgb(0 0 0 / 50%), inset 0 1px 0 rgb(183 75 75 / 10%);
+}
+
+@media (width >= 768px) and (width < 1024px) {
+  .project-card { padding: 2rem; }
+}
+
+@media (width >= 1024px) and (width < 1280px) {
+  .project-card { padding: 2.5rem; }
+}
+
+@media (width >= 1280px) {
+  .project-card { padding: 3rem; }
+}
+
+@media (width >= 1920px) {
+  .project-card { padding: 3.5rem; }
+}
 }
 }
 
