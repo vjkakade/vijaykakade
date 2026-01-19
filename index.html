@@ -93,6 +93,11 @@
             <a href="#projects" >Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <!-- ===== HOME SECTION ===== -->
@@ -224,6 +229,37 @@
 
     <!-- Javascript code for typing animation -->
     <script>
+        /* ===== HAMBURGER MENU TOGGLE ===== */
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Toggle menu on hamburger click
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
+
+            // Close menu when a nav link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('header')) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
         const texts = [
             " DevOps Engineer",
             " Cloud Engineer",

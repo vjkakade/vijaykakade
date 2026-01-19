@@ -69,6 +69,42 @@ header{
     z-index: 100;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: #b74b4b;
+  margin: 0.4rem 0;
+  border-radius: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Show hamburger on mobile */
+@media (width <= 995px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
 .logo {
   font-size: 3.4rem;
   color: #b74b4b;
@@ -98,6 +134,7 @@ nav a {
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
   position: relative;
+  display: inline-block;
 }
 
 nav a:hover,
@@ -116,36 +153,67 @@ nav a:focus {
   outline-offset: 2px;
 }
 
+/* Desktop Navigation (>995px) - visible inline */
+@media (width > 995px) {
+  nav {
+    display: flex !important;
+    position: static;
+    width: auto;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-left: 4rem;
+  }
+
+  nav a:not(.active) {
+    border-bottom: 3px solid transparent;
+  }
+}
+
+/* Mobile Navigation (<=995px) - hidden hamburger menu */
 @media(width <=995px){
     nav{
-        position: absolute;
+        position: fixed;
         display: none;
-        top: 0;
+        top: 80px;
         right: 0;
         width: 40%;
+        height: auto;
+        max-height: calc(100vh - 80px);
         border-left: 3px solid #b74b4b;
         border-bottom: 3px solid #b74b4b;
         border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        padding: 2rem 1.5rem;
         background-color: #161616;
         border-top: 0.1rem solid rgb(0 0 0 / 10%);
+        z-index: 99;
+        overflow-y: auto;
     }
 
     nav.active{
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     nav a{
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 2rem 0;
+        border-bottom: none;
+        padding: 0.5rem 0;
     }
 
     nav a:hover,
     nav a.active{
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        border-bottom: none;
+        border-left: 4px solid #b74b4b;
         background-color: rgba(183, 75, 75, 0.1);
     }
 }
