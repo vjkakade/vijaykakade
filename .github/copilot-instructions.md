@@ -4,6 +4,8 @@
 
 A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud infrastructure, and automation expertise. Single-page application with dynamic sections for home, skills, projects, and contact. Features animated typing text, skill cards grid, project showcase, and integrated contact form.
 
+**Tech Stack:** Vanilla HTML5, CSS3, JavaScript (no frameworks); PWA-enabled with service worker for offline support; deployed on GitHub Pages (CNAME: vijaykakade.dev).
+
 ## Architecture & Key Components
 
 ### File Structure
@@ -145,9 +147,49 @@ npm run lint
 - **Mobile testing:** Check at 375px (iPhone), 768px (iPad), 1024px (tablet)
 - **Form testing:** Verify Formspree integration sends emails correctly; test validation
 
-## Performance Notes
+## Performance & PWA Features
 
-- Minimize image sizes (skill cards icons should be <10KB each)
-- Use SVG for logos/icons where possible
-- Profile image (`main.jpg`) should be optimized (aim for <100KB)
-- Consider lazy loading for project images if added in future
+- **Minimize image sizes:** Skill cards icons should be <10KB each; use SVG for logos/icons where possible
+- **Profile image:** `main.jpg` should be optimized (aim for <100KB)
+- **Service Worker:** [sw.js](sw.js) implements offline-first caching strategy
+  - Caches critical resources on install: `style.css`, `main.jpg`, `manifest.json`, root path
+  - Fetch strategy: serves cached version if available, falls back to network
+  - Cache cleanup on activate removes old cache versions
+  - Registered in HTML via `navigator.serviceWorker.register('sw.js')`
+- **PWA Configuration:** [manifest.json](manifest.json) enables "Add to Home Screen" on mobile
+  - Includes multiple favicon sizes (16x16, 32x32, 192x192, 512x512)
+  - `display: "standalone"` for app-like experience
+  - Update cache name in `sw.js` (`CACHE_NAME = 'vijay-kakade-portfolio-vX'`) when deploying breaking changes
+
+## Cross-Cutting Concerns
+
+### Form Submission Flow ([index.html](index.html#L300-L365))
+
+1. User submits form → validation checks (name required, email regex, message ≥10 chars)
+2. On error: Display inline error message, preserve form data
+3. On success: Show "Sending..." state on button, disable submit
+4. POST to Formspree endpoint (`https://formspree.io/f/mgvrvelo`)
+5. On response: Reset form, show success alert, restore button
+6. Always restore button state even on errors (try/catch/finally pattern)
+
+### Navigation Active State Management
+
+- JavaScript detects scroll position and updates `.active` class on corresponding nav link
+- Mobile: hamburger menu toggles visibility via `.active` class on nav element
+- Desktop (≥995px): Always visible nav, hover/active underline styling
+- Critical: Keep section IDs (`#home`, `#skills`, `#projects`, `#contact`) synced with nav href targets
+
+### Mobile-First Breakpoints (from CSS)
+
+- **<600px:** 2-column skills grid, stacked contact layout, reduced padding
+- **600-900px:** Auto-fit skills columns, hamburger menu active
+- **900-995px:** Nav dropdown, home section vertical stack
+- **≥995px:** Full desktop: 4-column skills grid, flex home/contact side-by-side, persistent nav
+- **Key pattern:** Max-width media queries override mobile defaults; don't use `max-width: 100%` on `.container`
+
+### JavaScript Interactivity Patterns
+
+1. **Typing animation:** Setup once on page load; cycles through `texts` array with setTimeout delays
+2. **Service Worker registration:** Safe try/catch; silently fails in non-HTTPS or unsupported browsers
+3. **Form event handling:** Use `addEventListener`, not inline `onsubmit`; async/await for fetch calls
+4. **No global state:** Each module (typing, form, nav) manages its own state locally
