@@ -110,11 +110,11 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 ## Common Customization Points
 
-- **Typing text roles:** Edit array in JavaScript (line ~155): `["DevOps Engineer", "Cloud Engineer", ...]`
-- **Skills grid columns:** Edit `.skills-grid` at line ~456: `grid-template-columns: repeat(4, minmax(180px, 1fr))`
+- **Typing text roles:** Edit array in JavaScript ([index.html](index.html#L263)): `["DevOps Engineer", "Cloud Engineer", "Linux Engineer", ...]`
+- **Skills grid columns:** Search for `.skills-grid` in CSS: `grid-template-columns: repeat(4, minmax(180px, 1fr))`
 - **Accent color:** Search `#b74b4b` and replace with new color throughout CSS
-- **Social media URLs:** Update links in `.social-icons` section
-- **Form endpoint:** Update Formspree action URL in contact form
+- **Social media URLs:** Update links in `.social-icons` section ([index.html](index.html#L119))
+- **Form endpoint:** Update Formspree action URL in contact form ([index.html](index.html#L220)) — currently `https://formspree.io/f/mrbnreak`
 - **Profile image:** Replace `main.jpg` with new file (same name or update src)
 
 ## Naming Conventions
@@ -166,9 +166,9 @@ npm run lint
 ### Form Submission Flow ([index.html](index.html#L300-L365))
 
 1. User submits form → validation checks (name required, email regex, message ≥10 chars)
-2. On error: Display inline error message, preserve form data
+2. On error: Display alert with warning, preserve form data
 3. On success: Show "Sending..." state on button, disable submit
-4. POST to Formspree endpoint (`https://formspree.io/f/mgvrvelo`)
+4. POST to Formspree endpoint ([index.html](index.html#L220) — currently `https://formspree.io/f/mrbnreak`)
 5. On response: Reset form, show success alert, restore button
 6. Always restore button state even on errors (try/catch/finally pattern)
 
@@ -189,7 +189,8 @@ npm run lint
 
 ### JavaScript Interactivity Patterns
 
-1. **Typing animation:** Setup once on page load; cycles through `texts` array with setTimeout delays
-2. **Service Worker registration:** Safe try/catch; silently fails in non-HTTPS or unsupported browsers
-3. **Form event handling:** Use `addEventListener`, not inline `onsubmit`; async/await for fetch calls
-4. **No global state:** Each module (typing, form, nav) manages its own state locally
+1. **Typing animation:** Setup once on page load ([index.html](index.html#L274)); cycles through `texts` array ([index.html](index.html#L263)) with setTimeout delays (100ms typing, 50ms delete, 1000ms pause)
+2. **Service Worker registration:** Safe try/catch in `window.addEventListener('load')` ([index.html](index.html#L410)); silently fails in non-HTTPS or unsupported browsers
+3. **Form event handling:** Use `addEventListener` ([index.html](index.html#L341)), not inline `onsubmit`; async/await for fetch calls with try/catch/finally
+4. **Navigation updates:** Scroll listener detects current section and updates `.active` class on nav links ([index.html](index.html#L390))
+5. **No global state:** Each module (typing, form, nav) manages its own state locally
