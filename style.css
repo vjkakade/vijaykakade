@@ -242,12 +242,35 @@ section{
     margin-top: 120px;
 }
 
+/* Mobile section margin adjustment */
+@media (width <= 900px) {
+  section {
+    margin-top: 70px;
+    padding: 6rem 5% 5rem 5%;
+  }
+}
+
+@media (width <= 600px) {
+  section {
+    margin-top: 60px;
+    padding: 5rem 5% 5rem 5%;
+  }
+}
+
 .home{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8rem;
     background-color: black;
+}
+
+/* Mobile home layout - stack vertically */
+@media (width <= 900px) {
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
 
 /* Responsive gaps for home section */
@@ -343,9 +366,9 @@ span{
 
 .home-img img{
     position: relative;
-    width: 32vw;
-    min-width: 250px;
-    max-width: 450px;
+    width: 28vw;
+    min-width: 200px;
+    max-width: 350px;
     border-radius: 50%;
     box-shadow: 0 0 30px rgb(183 75 75 / 40%), inset 0 0 30px rgb(183 75 75 / 10%);
     cursor: pointer;
@@ -353,19 +376,19 @@ span{
 }
 
 @media (width >= 768px) and (width < 1024px) {
-  .home-img img { width: 35vw; min-width: 220px; max-width: 350px; }
+  .home-img img { width: 30vw; min-width: 180px; max-width: 300px; }
 }
 
 @media (width >= 1024px) and (width < 1280px) {
-  .home-img img { width: 33vw; min-width: 280px; max-width: 400px; }
+  .home-img img { width: 28vw; min-width: 220px; max-width: 330px; }
 }
 
 @media (width >= 1280px) {
-  .home-img img { width: 32vw; min-width: 300px; max-width: 450px; }
+  .home-img img { width: 28vw; min-width: 250px; max-width: 380px; }
 }
 
 @media (width >= 1920px) {
-  .home-img img { width: 30vw; min-width: 350px; max-width: 500px; }
+  .home-img img { width: 26vw; min-width: 300px; max-width: 420px; }
 }
 
 .home-img img:hover{
@@ -1365,16 +1388,22 @@ span{
   }
 
   header {
-    padding: 1rem 5%;
+    padding: 0.8rem 3%;
+    width: calc(100% - 15px);
   }
 
   .logo {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .logo img {
-    height: 75px;
+    height: 50px;
     width: auto;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
   }
 
   section {
@@ -1382,15 +1411,21 @@ span{
   }
 
   .home-content h1 {
-    font-size: 4.5rem;
+    font-size: 2.2rem;
   }
 
   .home-content h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .home-content p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+    min-width: 150px;
+    max-width: 250px;
   }
 
   .skills-grid {
