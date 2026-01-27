@@ -251,7 +251,7 @@ section{
     align-items: center;
     gap: 8rem;
     background-color: black;
-    padding-top: 8rem;
+    padding-top: 12rem;
 }
 
 /* Responsive gaps for home section */
@@ -1124,8 +1124,6 @@ span{
 
 @media (width >= 1920px) {
   .project-card { padding: 3.5rem; }
-}
-}
 }
 
 .project-card:hover {
