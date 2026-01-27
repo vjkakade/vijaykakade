@@ -76,8 +76,9 @@ header{
 /* Separated Logo Wrapper */
 .logo-wrapper {
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 101;
     background-color: transparent;
     backdrop-filter: none;
@@ -1416,8 +1417,9 @@ span{
   }
 
   .logo-wrapper {
-    top: 15px;
-    left: 15px;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0;
   }
 
