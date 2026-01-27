@@ -5,35 +5,57 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ===== FIXED BREAKPOINTS FOR CONSISTENT EXPERIENCE ===== */
-/* 768px tablets */
+/* ===== COMPREHENSIVE BREAKPOINTS FOR ALL RESOLUTIONS ===== */
+/* Mobile: 320px - 767px */
+@media (width <= 480px) {
+  html { font-size: 50%; }
+}
+
+@media (width >= 481px) and (width < 600px) {
+  html { font-size: 54%; }
+}
+
+@media (width >= 600px) and (width < 768px) {
+  html { font-size: 56%; }
+}
+
+/* Tablets: 768px - 1023px */
 @media (width >= 768px) and (width < 1024px) {
   html { font-size: 60%; }
 }
 
-/* 1024px tablets */
+/* iPad & Small Laptops: 1024px - 1365px */
 @media (width >= 1024px) and (width < 1280px) {
   html { font-size: 61%; }
 }
 
-/* 1280px small desktop */
-@media (width >= 1280px) and (width < 1440px) {
+@media (width >= 1280px) and (width < 1366px) {
+  html { font-size: 61.5%; }
+}
+
+/* Common Laptop: 1366x768 */
+@media (width >= 1366px) and (width < 1440px) {
   html { font-size: 62%; }
 }
 
-/* 1440px standard desktop */
+/* 1440p (QHD) Standard Desktop */
 @media (width >= 1440px) and (width < 1600px) {
   html { font-size: 62.5%; }
 }
 
-/* 1600px large desktop */
+/* 1600p Large Desktop */
 @media (width >= 1600px) and (width < 1920px) {
   html { font-size: 63%; }
 }
 
-/* 1920px+ ultra wide */
-@media (width >= 1920px) {
+/* 1920p (Full HD) */
+@media (width >= 1920px) and (width < 2560px) {
   html { font-size: 64%; }
+}
+
+/* 2560p (4K) and beyond */
+@media (width >= 2560px) {
+  html { font-size: 65%; }
 }
 
 * {
