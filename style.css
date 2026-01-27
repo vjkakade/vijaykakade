@@ -76,16 +76,15 @@ header{
 /* Separated Logo Wrapper */
 .logo-wrapper {
     position: fixed;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 15px;
+    left: 15px;
     z-index: 101;
-    background-color: rgba(16, 16, 16, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(183, 75, 75, 0.3);
+    background-color: transparent;
+    backdrop-filter: none;
+    border: none;
     border-radius: 12px;
-    padding: 0.7rem 1rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(183, 75, 75, 0.1);
+    padding: 0;
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
@@ -1417,10 +1416,9 @@ span{
   }
 
   .logo-wrapper {
-    top: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.6rem 0.8rem;
+    top: 15px;
+    left: 15px;
+    padding: 0;
   }
 
   .logo {
