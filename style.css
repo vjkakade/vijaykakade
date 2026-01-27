@@ -57,10 +57,9 @@ body{
 header{
     position: fixed;
     top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 30px);
-    max-width: 1200px;
+    right: 15px;
+    width: auto;
+    max-width: calc(100% - 30px);
     padding: 0.9rem 2.5rem;
     background-color: rgba(16, 16, 16, 0.95);
     backdrop-filter: blur(10px);
@@ -77,8 +76,9 @@ header{
 /* Separated Logo Wrapper */
 .logo-wrapper {
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 101;
     background-color: rgba(16, 16, 16, 0.95);
     backdrop-filter: blur(10px);
@@ -1408,11 +1408,18 @@ span{
   }
 
   header {
-    padding: 0.8rem 3%;
-    width: calc(100% - 15px);
+    top: 15px;
+    right: 10px;
+    left: auto;
+    padding: 0.7rem 1.5rem;
+    width: auto;
+    max-width: calc(100% - 20px);
   }
 
   .logo-wrapper {
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.6rem 0.8rem;
   }
 
