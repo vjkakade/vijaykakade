@@ -111,7 +111,7 @@ header{
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #b74b4b;
   font-weight: 800;
   cursor: pointer;
@@ -119,6 +119,7 @@ header{
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  gap: 0.8rem;
 }
 
 .logo:hover {
@@ -127,7 +128,7 @@ header{
 }
 
 .logo img {
-  height: 45px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -239,7 +240,7 @@ nav a:focus {
 section{
     min-height: 100vh;
     padding: 8rem 9% 5rem 9%;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .home{
