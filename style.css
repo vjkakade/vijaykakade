@@ -61,7 +61,7 @@ header{
     transform: translateX(-50%);
     width: calc(100% - 30px);
     max-width: 1200px;
-    padding: 1rem 3rem;
+    padding: 0.9rem 2.5rem;
     background-color: rgba(16, 16, 16, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(183, 75, 75, 0.3);
@@ -111,7 +111,7 @@ header{
 }
 
 .logo {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #b74b4b;
   font-weight: 800;
   cursor: pointer;
@@ -127,11 +127,12 @@ header{
 }
 
 .logo img {
-  height: 80px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
   transition: all 0.3s ease;
+  margin-right: 0.5rem;
 }
 
 .logo:hover img {
@@ -1393,12 +1394,13 @@ span{
   }
 
   .logo {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .logo img {
-    height: 65px;
+    height: 55px;
     width: auto;
+    margin-right: 0.3rem;
   }
 
   nav a {
