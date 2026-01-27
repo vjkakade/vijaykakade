@@ -111,7 +111,7 @@ header{
 }
 
 .logo {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   color: #b74b4b;
   font-weight: 800;
   cursor: pointer;
@@ -127,7 +127,7 @@ header{
 }
 
 .logo img {
-  height: 65px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1393,11 +1393,11 @@ span{
   }
 
   .logo {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .logo img {
-    height: 50px;
+    height: 65px;
     width: auto;
   }
 
