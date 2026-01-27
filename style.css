@@ -68,10 +68,29 @@ header{
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(183, 75, 75, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     z-index: 100;
     transition: all 0.3s ease;
+}
+
+/* Separated Logo Wrapper */
+.logo-wrapper {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    background-color: rgba(16, 16, 16, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(183, 75, 75, 0.3);
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(183, 75, 75, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo-wrapper .logo {
+    margin: 0;
 }
 
 /* Hamburger Menu Button */
@@ -1391,6 +1410,10 @@ span{
   header {
     padding: 0.8rem 3%;
     width: calc(100% - 15px);
+  }
+
+  .logo-wrapper {
+    padding: 0.6rem 0.8rem;
   }
 
   .logo {
