@@ -997,6 +997,13 @@ span {
   margin-bottom: 1.5rem;
 }
 
+.skill-card img[src*="oracle"] {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.5rem;
+  /* reduce margin to correct for extra height */
+}
+
 .skill-card p {
   font-size: 1.6rem;
   color: white;
