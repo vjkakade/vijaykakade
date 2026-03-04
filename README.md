@@ -183,12 +183,12 @@ Update URLs in `.social-icons` section:
 
 The site is fully responsive with optimized layouts for:
 
-| Device  | Width         | Breakpoint | Grid Columns            |
-| ------- | ------------- | ---------- | ----------------------- |
-| Desktop | 1024px+       | Default    | 4 columns               |
-| Tablet  | 768px - 1023px | 768px     | 3-4 columns             |
-| Mobile  | 600px - 767px | 600px      | 2 columns               |
-| Phone   | <600px        | <600px      | 2 columns (smaller)     |
+| Device  | Width            | Breakpoint | Grid Columns            |
+| ------- | ---------------- | ---------- | ----------------------- |
+| Desktop | 1024px+          | Default    | 4 columns               |
+| Tablet  | 768px - 1023px   | 768px      | 3-4 columns             |
+| Mobile  | 600px - 767px    | 600px      | 2 columns               |
+| Phone   | <600px           | <600px     | 2 columns (smaller)     |
 
 ## ✅ Quality Assurance
 

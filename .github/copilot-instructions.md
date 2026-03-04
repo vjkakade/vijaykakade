@@ -110,11 +110,11 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 ## Common Customization Points
 
--- **Typing text roles:** Edit array in JavaScript ([index.html](../index.html)): `["DevOps Engineer", "Cloud Engineer", "Linux Engineer", ...]`
+-- **Typing text roles:** Edit array in JavaScript (index.html): `["DevOps Engineer", "Cloud Engineer", "Linux Engineer", ...]`
 - **Skills grid columns:** Search for `.skills-grid` in CSS: `grid-template-columns: repeat(4, minmax(180px, 1fr))`
 - **Accent color:** Search `#b74b4b` and replace with new color throughout CSS
--- **Social media URLs:** Update links in `.social-icons` section ([index.html](../index.html))
--- **Form endpoint:** Update Formspree action URL in contact form ([index.html](../index.html)) — currently `https://formspree.io/f/mrbnreak`
+-- **Social media URLs:** Update links in `.social-icons` section (index.html)
+-- **Form endpoint:** Update Formspree action URL in contact form (index.html) — currently `https://formspree.io/f/mrbnreak`
 - **Profile image:** Replace `main.jpg` with new file (same name or update src)
 
 ## Naming Conventions
@@ -149,26 +149,26 @@ npm run lint
 
 ## Performance & PWA Features
 
-- **Minimize image sizes:** Skill cards icons should be <10KB each; use SVG for logos/icons where possible
-- **Profile image:** `main.jpg` should be optimized (aim for <100KB)
-- **Service Worker:** [sw.js](sw.js) implements offline-first caching strategy
+ - **Minimize image sizes:** Skill cards icons should be <10KB each; use SVG for logos/icons where possible
+ - **Profile image:** `main.jpg` should be optimized (aim for <100KB)
+ - **Service Worker:** sw.js implements offline-first caching strategy
   - Caches critical resources on install: `style.css`, `main.jpg`, `manifest.json`, root path
   - Fetch strategy: serves cached version if available, falls back to network
   - Cache cleanup on activate removes old cache versions
   - Registered in HTML via `navigator.serviceWorker.register('sw.js')`
-- **PWA Configuration:** [manifest.json](manifest.json) enables "Add to Home Screen" on mobile
+- **PWA Configuration:** manifest.json enables "Add to Home Screen" on mobile
   - Includes multiple favicon sizes (16x16, 32x32, 192x192, 512x512)
   - `display: "standalone"` for app-like experience
   - Update cache name in `sw.js` (`CACHE_NAME = 'vijay-kakade-portfolio-vX'`) when deploying breaking changes
 
 ## Cross-Cutting Concerns
 
-### Form Submission Flow ([index.html](../index.html))
+### Form Submission Flow (index.html)
 
 1. User submits form → validation checks (name required, email regex, message ≥10 chars)
 2. On error: Display alert with warning, preserve form data
 3. On success: Show "Sending..." state on button, disable submit
-4. POST to Formspree endpoint ([index.html](index.html#L220) — currently `https://formspree.io/f/mrbnreak`)
+4. POST to Formspree endpoint (index.html) — currently `https://formspree.io/f/mrbnreak`
 5. On response: Reset form, show success alert, restore button
 6. Always restore button state even on errors (try/catch/finally pattern)
 
@@ -189,8 +189,8 @@ npm run lint
 
 ### JavaScript Interactivity Patterns
 
-1. **Typing animation:** Setup once on page load ([index.html](index.html#L274)); cycles through `texts` array ([index.html](index.html#L263)) with setTimeout delays (100ms typing, 50ms delete, 1000ms pause)
-2. **Service Worker registration:** Safe try/catch in `window.addEventListener('load')` ([index.html](index.html#L410)); silently fails in non-HTTPS or unsupported browsers
-3. **Form event handling:** Use `addEventListener` ([index.html](index.html#L341)), not inline `onsubmit`; async/await for fetch calls with try/catch/finally
-4. **Navigation updates:** Scroll listener detects current section and updates `.active` class on nav links ([index.html](index.html#L390))
+1. **Typing animation:** Setup once on page load (index.html); cycles through `texts` array (index.html) with setTimeout delays (100ms typing, 50ms delete, 1000ms pause)
+2. **Service Worker registration:** Safe try/catch in `window.addEventListener('load')` (index.html); silently fails in non-HTTPS or unsupported browsers
+3. **Form event handling:** Use `addEventListener` (index.html), not inline `onsubmit`; async/await for fetch calls with try/catch/finally
+4. **Navigation updates:** Scroll listener detects current section and updates `.active` class on nav links (index.html)
 5. **No global state:** Each module (typing, form, nav) manages its own state locally
