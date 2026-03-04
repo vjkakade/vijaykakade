@@ -42,7 +42,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 
 - Grid layout (4 columns desktop, 2 columns mobile)
 - Professional skill cards with colorful SVG icons:
-  - Azure, AWS, GCP, Azure DevOps
+  - Azure, AWS, GCP, Oracle Cloud, Azure DevOps
   - Jenkins, GitHub, Terraform, CI/CD Pipelines
 - Hover effects with smooth transitions
 - Vertical "Skills" label with rotation effect
@@ -81,6 +81,7 @@ vijaykakade/
 │   ├── azure.svg
 │   ├── aws.svg
 │   ├── gcp.svg
+│   ├── oracle.svg
 │   ├── azure-devops.svg
 │   ├── jenkins.svg
 │   ├── github.svg
@@ -182,12 +183,12 @@ Update URLs in `.social-icons` section:
 
 The site is fully responsive with optimized layouts for:
 
-| Device | Width | Breakpoint | Grid Columns |
-|--------|-------|-----------|--------------|
-| Desktop | 1024px+ | Default | 4 columns |
-| Tablet | 768px - 1023px | 768px | 3-4 columns |
-| Mobile | 600px - 767px | 600px | 2 columns |
-| Phone | <600px | 600px | 2 columns (smaller) |
+| Device  | Width         | Breakpoint | Grid Columns            |
+| ------- | ------------- | ---------- | ----------------------- |
+| Desktop | 1024px+       | Default    | 4 columns               |
+| Tablet  | 768px - 1023px | 768px     | 3-4 columns             |
+| Mobile  | 600px - 767px | 600px      | 2 columns               |
+| Phone   | <600px        | <600px      | 2 columns (smaller)     |
 
 ## ✅ Quality Assurance
 
@@ -304,7 +305,7 @@ If form doesn't work:
 ## 🔧 Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+| ------- | ----------- |
 | HTML | Semantic HTML5 |
 | CSS | Modern CSS3, responsive design, animations |
 | JavaScript | Vanilla JS (no frameworks) |

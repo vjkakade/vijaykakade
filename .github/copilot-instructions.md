@@ -12,7 +12,7 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 - `index.html` — Main HTML with 4 key sections: home (hero), skills grid, projects showcase, contact form
 - `style.css` — All styling (813 lines); responsive design with mobile-first approach
-- `images/` — Directory for skill logos (Azure, AWS, GCP, etc.) and project thumbnails
+- `images/` — Directory for skill logos (Azure, AWS, GCP, Oracle Cloud, etc.) and project thumbnails
 - `main.jpg` — Profile photo displayed in hero section
 - `package.json` — npm dependencies (stylelint, htmlhint) and lint scripts
 
@@ -110,11 +110,11 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 ## Common Customization Points
 
-- **Typing text roles:** Edit array in JavaScript ([index.html](index.html#L263)): `["DevOps Engineer", "Cloud Engineer", "Linux Engineer", ...]`
+-- **Typing text roles:** Edit array in JavaScript ([index.html](../index.html)): `["DevOps Engineer", "Cloud Engineer", "Linux Engineer", ...]`
 - **Skills grid columns:** Search for `.skills-grid` in CSS: `grid-template-columns: repeat(4, minmax(180px, 1fr))`
 - **Accent color:** Search `#b74b4b` and replace with new color throughout CSS
-- **Social media URLs:** Update links in `.social-icons` section ([index.html](index.html#L119))
-- **Form endpoint:** Update Formspree action URL in contact form ([index.html](index.html#L220)) — currently `https://formspree.io/f/mrbnreak`
+-- **Social media URLs:** Update links in `.social-icons` section ([index.html](../index.html))
+-- **Form endpoint:** Update Formspree action URL in contact form ([index.html](../index.html)) — currently `https://formspree.io/f/mrbnreak`
 - **Profile image:** Replace `main.jpg` with new file (same name or update src)
 
 ## Naming Conventions
@@ -163,7 +163,7 @@ npm run lint
 
 ## Cross-Cutting Concerns
 
-### Form Submission Flow ([index.html](index.html#L300-L365))
+### Form Submission Flow ([index.html](../index.html))
 
 1. User submits form → validation checks (name required, email regex, message ≥10 chars)
 2. On error: Display alert with warning, preserve form data
