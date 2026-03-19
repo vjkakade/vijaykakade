@@ -4,9 +4,20 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v16 or higher) - [Download Node.js](https://nodejs.org/)
+- **Python 3** (for local server) - [Download Python](https://python.org/)
+- **Git** (for version control) - [Download Git](https://git-scm.com/)
+
 ### Install & Run Locally
 
 ```powershell
+# Clone the repository
+git clone https://github.com/vjkakade/vijaykakade.git
+cd vijaykakade
+
 # Install dependencies
 npm install
 
@@ -55,6 +66,17 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 - Currently showcasing:
   - Multi-Cloud Infrastructure Deployment (Terraform + Azure DevOps)
   - Production-Grade Azure Infrastructure (Auto-scaling)
+
+### Certifications Section
+
+- Industry-recognized certifications in cloud and AI technologies
+- Professional credentials from Oracle Cloud Infrastructure
+- Demonstrates commitment to continuous learning and expertise validation
+- Currently showcasing:
+  - Oracle AI Vector Search Certified Professional
+  - Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate
+  - Oracle Cloud Infrastructure 2025 Certified Generative AI Professional
+  - Oracle Cloud Infrastructure 2025 Certified DevOps Professional
 
 ### Contact Section
 
@@ -326,12 +348,233 @@ If form doesn't work:
 
 ## 🤝 Contributing
 
-To modify the portfolio:
+### Development Workflow
 
-1. Make changes locally
-2. Run `npm run lint` to verify quality
-3. Test on mobile and desktop
-4. Push to main branch (auto-deploys)
+1. **Fork and Clone**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/vijaykakade.git
+   cd vijaykakade
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Make Changes**
+   - Edit files using your preferred editor
+   - Follow the coding conventions outlined in [.github/copilot-instructions.md](.github/copilot-instructions.md)
+
+4. **Test Your Changes**
+   ```bash
+   npm run lint              # Check code quality
+   python -m http.server     # Start local server
+   # Test in browser at http://localhost:8000
+   ```
+
+5. **Commit and Push**
+   ```bash
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+   ```
+
+### Code Style Guidelines
+
+- **CSS Classes:** Use kebab-case (`.home-content`, `.skill-card`)
+- **JavaScript:** Use camelCase for variables (`typingSpan`, `formData`)
+- **File Naming:** kebab-case for files (`style.css`, `main.jpg`)
+- **Indentation:** 2 spaces (no tabs)
+- **Quotes:** Double quotes for HTML attributes, single quotes for CSS values
+
+### Adding New Features
+
+#### Adding a New Skill Card
+1. Add SVG icon to `/images/` folder (70x70px recommended)
+2. Add HTML in `.skills-grid` section:
+   ```html
+   <div class="skill-card">
+       <img src="images/your-skill.svg" alt="Your Skill">
+       <p>Your Skill</p>
+   </div>
+   ```
+
+#### Adding a New Project
+1. Add project card in `.projects-container`:
+   ```html
+   <div class="project-card">
+       <div class="project-content">
+           <h3>Project Title</h3>
+           <p>Project description goes here.</p>
+           <div class="project-buttons">
+               <a href="https://demo-url.com" target="_blank" class="project-btn">Demo Video</a>
+               <a href="https://github.com/your-repo" target="_blank" class="project-btn">GitHub Repo</a>
+           </div>
+       </div>
+   </div>
+   ```
+
+#### Updating Contact Form
+- Formspree endpoint: `https://formspree.io/f/mgvrvelo`
+- Validation rules: Name required, email format validated, message ≥10 chars
+- Test form submissions in [Formspree dashboard](https://formspree.io)
+
+### Testing Requirements
+
+Before submitting changes:
+
+- [ ] Run `npm run lint` - No CSS/HTML errors
+- [ ] Test on desktop (1920x1080) and mobile (375x667)
+- [ ] Verify all links work correctly
+- [ ] Test form submission (if modified)
+- [ ] Check responsive behavior at all breakpoints
+- [ ] Ensure accessibility (keyboard navigation, alt text)
+
+### Pull Request Guidelines
+
+1. Create a new branch for your feature
+2. Write clear, descriptive commit messages
+3. Update this README if your changes affect functionality
+4. Ensure all tests pass before submitting
+5. Be responsive to feedback and ready to make changes
+
+### Common Issues & Solutions
+
+**PowerShell Execution Policy Error:**
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm run lint
+```
+
+**Form Not Working:**
+- Check Formspree dashboard for active form
+- Verify email forwarding settings
+- Test with browser console (see TESTING.md)
+
+**Images Not Loading:**
+- Ensure images are in correct `/images/` folder
+- Check file names match HTML references
+- Verify image dimensions and file size
+
+**Linting Errors:**
+- Run `npx stylelint "**/*.css" --fix` to auto-fix CSS issues
+- Check `.stylelintrc.json` for project-specific rules
+- Review HTMLHint errors for HTML issues
+
+## 🔧 Troubleshooting
+
+### Development Environment Issues
+
+**Node.js Not Found:**
+```bash
+# Check Node.js installation
+node --version
+npm --version
+
+# If not installed, download from: https://nodejs.org/
+```
+
+**Python Server Not Working:**
+```bash
+# Alternative local servers
+npm install -g live-server
+live-server
+
+# Or use VS Code Live Server extension
+# Or use Python 2: python -m SimpleHTTPServer 8000
+```
+
+**Port Already in Use:**
+```bash
+# Use different port
+python -m http.server 8080
+# Access at http://localhost:8080
+```
+
+### Browser Issues
+
+**Changes Not Reflecting:**
+- Hard refresh: Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
+- Clear browser cache
+- Check browser console for errors
+
+**Service Worker Caching Old Files:**
+- Open DevTools > Application > Service Workers
+- Click "Unregister" to clear cache
+- Or disable service worker in DevTools > Application > Service Workers
+
+**Mobile View Not Working:**
+- Use DevTools device toolbar: Ctrl+Shift+M (Windows) or Cmd+Shift+M (Mac)
+- Check viewport meta tag in HTML head
+- Verify CSS media queries
+
+### Git Issues
+
+**Permission Denied Errors:**
+```bash
+# Check remote URL
+git remote -v
+
+# Update to SSH if using HTTPS with 2FA
+git remote set-url origin git@github.com:username/repo.git
+```
+
+**Merge Conflicts:**
+```bash
+# Check status
+git status
+
+# Resolve conflicts manually in files
+# Add resolved files
+git add .
+
+# Commit resolution
+git commit -m "Resolve merge conflicts"
+```
+
+### Performance Issues
+
+**Slow Page Load:**
+- Check image sizes (should be optimized)
+- Verify no unnecessary CSS/JS
+- Use browser DevTools Network tab to identify bottlenecks
+
+**Animations Janky:**
+- Check for expensive CSS properties (avoid layout thrashing)
+- Use `transform` and `opacity` for animations
+- Verify hardware acceleration is enabled
+
+### Getting Help
+
+If you're stuck:
+
+1. **Check Documentation:**
+   - [TESTING.md](TESTING.md) - Comprehensive testing guide
+   - [LINTING.md](LINTING.md) - Code quality setup
+   - [.github/copilot-instructions.md](.github/copilot-instructions.md) - Development patterns
+
+2. **Common Debugging Steps:**
+   ```bash
+   # Verify dependencies
+   npm list
+   
+   # Check for vulnerabilities
+   npm audit
+   
+   # Run all checks
+   npm run lint
+   ```
+
+3. **Browser Developer Tools:**
+   - Console tab for JavaScript errors
+   - Network tab for loading issues
+   - Elements tab for CSS problems
+   - Application tab for service worker/cache issues
+
+4. **Community Help:**
+   - Create GitHub issue with detailed description
+   - Include browser version, OS, and steps to reproduce
+   - Attach screenshots if relevant
 
 ## 📄 License
 
