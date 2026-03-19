@@ -1,3 +1,119 @@
+/* Certification logos */
+.cert-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 1rem;
+  border-radius: 6px;
+  background: #fff1;
+  box-shadow: 0 2px 8px rgb(183 75 75 / 10%);
+}
+/* Section fade/slide-in animation */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Contact form status message */
+.form-status {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  min-height: 2.2rem;
+  color: #fff;
+  text-align: left;
+  transition: color 0.2s;
+}
+.form-status.success {
+  color: #4bb74b;
+}
+.form-status.error {
+  color: #b74b4b;
+}
+/* Project tech stack badges/icons */
+.project-tech {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+.project-tech-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff1;
+  box-shadow: 0 2px 8px rgb(183 75 75 / 10%);
+  transition: transform 0.2s;
+}
+.project-tech-icon:hover {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 4px 16px rgb(183 75 75 / 30%);
+}
+/* Hamburger menu animation */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s;
+}
+.hamburger span {
+  height: 3px;
+  width: 30px;
+  background: #b74b4b;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+@media (width <=995px) {
+  .hamburger {
+    display: flex;
+  }
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #0a0a0a;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    box-shadow: 0 8px 32px rgb(0 0 0 / 60%);
+  }
+  .navbar-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .navbar-menu a {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #222;
+    font-size: 2rem;
+    transition: background 0.2s;
+  }
+  .navbar-menu a:hover, .navbar-menu a.active {
+    background: #191919;
+    color: #b74b4b;
+  }
+}
 /* ================= EXPERIENCE SECTION ================= */
 .experience {
   min-height: 70vh;
