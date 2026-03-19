@@ -1,3 +1,182 @@
+/* ================= EXPERIENCE SECTION ================= */
+.experience {
+  min-height: 70vh;
+  background: black;
+  padding: 6rem 9%;
+  text-align: center;
+  position: relative;
+}
+
+.experience-side-label {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  letter-spacing: 0.2rem;
+  color: #b74b4b;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: transparent;
+  padding: 0.4rem 0;
+  z-index: 10;
+}
+.experience-side-label::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #b74b4b;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+@media (width <=900px) {
+  .experience-side-label {
+    display: none;
+  }
+}
+.experience-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2.5rem;
+}
+.experience-heading span {
+  color: #b74b4b;
+}
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.experience-card {
+  background: #0a0a0a;
+  border: 2px solid #111;
+  border-radius: 1.2rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 0 15px rgb(183 75 75 / 10%);
+  transition: 0.3s ease;
+}
+.experience-card:hover {
+  border-color: #b74b4b;
+  box-shadow: 0 0 25px rgb(183 75 75 / 30%);
+  transform: translateY(-6px);
+}
+.experience-card h3 {
+  color: #b74b4b;
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+}
+.exp-duration {
+  font-size: 1.3rem;
+  color: #aaa;
+  margin-right: 1.5rem;
+}
+.exp-role {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0.5rem 0 0.2rem 0;
+}
+.exp-dates, .exp-location {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-right: 1.5rem;
+  margin-top: 0.2rem;
+}
+@media (width <=900px) {
+  .experience-list {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .experience-card {
+    padding: 1.5rem 1rem;
+  }
+  .experience-heading {
+    font-size: 2.5rem;
+  }
+}
+
+/* ================= CERTIFICATIONS SECTION ================= */
+.certifications {
+  min-height: 50vh;
+  background: #0a0a0a;
+  padding: 6rem 9%;
+  text-align: center;
+  position: relative;
+}
+.certifications-side-label {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  letter-spacing: 0.2rem;
+  color: #b74b4b;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: transparent;
+  padding: 0.4rem 0;
+  z-index: 10;
+}
+.certifications-side-label::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #b74b4b;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+@media (width <=900px) {
+  .certifications-side-label {
+    display: none;
+  }
+}
+.certifications-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2.5rem;
+}
+.certifications-heading span {
+  color: #b74b4b;
+}
+.certifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left;
+}
+.certifications-list li {
+  background: #111;
+  color: #fff;
+  border-left: 4px solid #b74b4b;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  transition: background 0.2s;
+}
+.certifications-list li:hover {
+  background: #191919;
+}
+@media (width <=900px) {
+  .certifications-heading {
+    font-size: 2.5rem;
+  }
+  .certifications-list li {
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+  }
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
 html {
