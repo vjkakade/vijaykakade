@@ -35,11 +35,14 @@
     display: none;
   }
 }
+
 .experience-heading {
   font-size: 4rem;
   font-weight: 700;
   color: white;
   margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px #111;
 }
 .experience-heading span {
   color: #b74b4b;
@@ -54,38 +57,47 @@
   margin: 0 auto;
 }
 .experience-card {
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #0a0a0a 0%, #191919 100%);
   border: 2px solid #111;
   border-radius: 1.2rem;
   padding: 2.5rem 2rem;
   width: 100%;
   text-align: left;
   box-shadow: 0 0 15px rgb(183 75 75 / 10%);
-  transition: 0.3s ease;
+  transition: 0.3s ease, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.7s ease;
 }
 .experience-card:hover {
   border-color: #b74b4b;
-  box-shadow: 0 0 25px rgb(183 75 75 / 30%);
-  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgb(183 75 75 / 40%);
+  transform: translateY(-8px) scale(1.02);
+  background: linear-gradient(135deg, #191919 0%, #222 100%);
 }
 .experience-card h3 {
   color: #b74b4b;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 .exp-duration {
-  font-size: 1.3rem;
-  color: #aaa;
+  font-size: 1.4rem;
+  color: #b74b4b;
+  font-weight: 500;
   margin-right: 1.5rem;
 }
 .exp-role {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #fff;
   margin: 0.5rem 0 0.2rem 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 .exp-dates, .exp-location {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #bbb;
   margin-right: 1.5rem;
   margin-top: 0.2rem;
@@ -100,6 +112,63 @@
   }
   .experience-heading {
     font-size: 2.5rem;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.certifications-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px #111;
+}
+.certifications-heading span {
+  color: #b74b4b;
+}
+.certifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left;
+}
+.certifications-list li {
+  background: #111;
+  color: #fff;
+  border-left: 4px solid #b74b4b;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.7rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 0 10px rgb(183 75 75 / 10%);
+  animation: fadeInUp 0.7s ease;
+}
+.certifications-list li:hover {
+  background: #191919;
+  box-shadow: 0 0 25px rgb(183 75 75 / 30%);
+  transform: translateY(-4px) scale(1.01);
+}
+@media (width <=900px) {
+  .certifications-heading {
+    font-size: 2.5rem;
+  }
+  .certifications-list li {
+    font-size: 1.3rem;
+    padding: 1rem 1rem;
   }
 }
 
