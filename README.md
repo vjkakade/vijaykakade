@@ -1,4 +1,4 @@
-# DevOps Portfolio Website
+catoin# DevOps Portfolio Website
 
 A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud infrastructure, and automation expertise. Single-page application with dynamic sections for home, skills, projects, and contact. Features animated typing text, skill cards grid, project showcase, and integrated contact form.
 
@@ -78,16 +78,46 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
   - Oracle Cloud Infrastructure 2025 Certified Generative AI Professional
   - Oracle Cloud Infrastructure 2025 Certified DevOps Professional
 
-### Contact Section
+## 🤝 Contributing
 
-- Professional contact form with validation
-- Form fields: Name, Email, Message
-- Client-side validation with user-friendly error messages
-- Integrated with Formspree for email delivery
-- Loading feedback and success confirmation
+We welcome contributions! Here's how to get started:
 
-## 📋 Project Structure
+### Development Setup
+1. Fork the repository and clone your fork.
+2. Follow the [Quick Start](#-quick-start) guide to set up the project locally.
+3. Create a feature branch: `git checkout -b feature/your-feature-name`.
 
+### Coding Standards
+- Use kebab-case for CSS classes and IDs.
+- Follow HTML5 semantic elements.
+- Ensure code passes linting: `npm run lint`.
+- Write descriptive commit messages (e.g., "feat: add new skill card for Docker").
+
+### Pull Request Process
+1. Test your changes thoroughly (see [Testing](#-testing)).
+2. Update documentation if needed.
+3. Submit a PR with a clear description of changes.
+4. Wait for review and address feedback.
+
+## 🏗️ Project Architecture and Key Components
+
+This is a static single-page application (SPA) built with vanilla technologies for simplicity and performance.
+
+### Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: Custom CSS with responsive breakpoints
+- **PWA Features**: Service Worker (sw.js) for offline caching, Web App Manifest (manifest.json)
+- **Linting**: Stylelint for CSS, HTMLHint for HTML
+- **Deployment**: Static hosting (GitHub Pages, Netlify, etc.)
+
+### Key Components
+- **index.html**: Main page with all sections (home, skills, projects, contact)
+- **style.css**: Responsive styles with animations and hover effects
+- **main.js** (inline in index.html): Handles typing animation, form submission, navigation
+- **sw.js**: Service worker for caching and offline support
+- **images/**: SVG icons for skills
+
+The app uses CSS Grid and Flexbox for layouts, with JavaScript for interactivity.
 ```text
 vijaykakade/
 ├── index.html                    # Main HTML with all sections
@@ -116,6 +146,17 @@ vijaykakade/
 ```
 
 ## 🛠️ Development
+
+## 🧪 Testing
+
+This project emphasizes quality through manual testing and linting. For comprehensive testing procedures, see [TESTING.md](TESTING.md).
+
+### Quick Test Commands
+- **Linting**: `npm run lint` (CSS and HTML)
+- **Cross-browser testing**: Manually test on Chrome, Firefox, Safari, and mobile browsers
+- **Responsive testing**: Check layouts at 375px, 768px, 1024px, and 1920px widths
+
+Ensure all features (typing animation, form submission, PWA offline mode) work before submitting changes.
 
 ### Available Commands
 
