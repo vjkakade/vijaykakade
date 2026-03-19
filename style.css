@@ -1123,17 +1123,32 @@ span {
 
 @media (width >=1024px) and (width < 1440px) {
   .skills-heading {
-    font-size: 3.5rem;
-  }
-}
-
-@media (width >=1440px) {
-  .skills-heading {
     font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px #111;
   }
-}
-
-@media (width >=1920px) {
+  .skills-heading span {
+    color: #b74b4b;
+  }
+  .skills-subtext {
+    font-size: 1.8rem;
+    color: #aaa;
+    margin: 1rem 0 4rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  @media (width <=900px) {
+    .skills-heading {
+      font-size: 2.5rem;
+    }
+    .skills-subtext {
+      font-size: 1.3rem;
+      margin: 1rem 0 2rem;
+    }
+  }
   .skills-heading {
     font-size: 4.5rem;
   }
@@ -1186,6 +1201,7 @@ span {
   max-width: 1400px;
   margin: 0 auto;
 }
+}
 
 @media (width >=768px) and (width < 1024px) {
   .skills-grid {
@@ -1231,13 +1247,15 @@ span {
 }
 
 .skill-card {
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #0a0a0a 0%, #191919 100%);
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
   border: 2px solid #111;
-  transition: 0.3s ease;
+  transition: 0.3s ease, box-shadow 0.3s, border-color 0.3s;
   box-shadow: 0 0 10px rgb(183 75 75 / 0%);
+  animation: fadeInUp 0.7s ease;
+}
 }
 
 .skill-card img {
@@ -1245,6 +1263,7 @@ span {
   height: 70px;
   object-fit: contain;
   margin-bottom: 1.5rem;
+}
 }
 
 .skill-card img[src*="oracle"] {
@@ -1260,12 +1279,14 @@ span {
   color: white;
   font-weight: 500;
 }
+}
 
 /* Hover Effects */
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   border-color: #b74b4b;
   box-shadow: 0 0 25px rgb(183 75 75 / 60%);
+  background: linear-gradient(135deg, #191919 0%, #222 100%);
 }
 
 /* the vertical label */
