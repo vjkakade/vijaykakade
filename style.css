@@ -1417,13 +1417,17 @@ span {
   border: 2px solid #111;
   transition: 0.3s ease;
   box-shadow: 0 0 10px rgb(183 75 75 / 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .skill-card img {
   width: 70px;
   height: 70px;
   object-fit: contain;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem 0;
 }
 
 
