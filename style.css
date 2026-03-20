@@ -1,3 +1,8 @@
+.cert-title.center {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 /* EXPERIENCE GRID & CARD ENHANCEMENTS */
 .experience-grid {
   display: grid;
