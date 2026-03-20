@@ -547,14 +547,47 @@
             updateActiveLink(); // Initial call
         });
     </script>
-        <!-- Decorative Bottom Image -->
-        <!-- Decorative Themed SVG Bottom -->
-        <div class="bottom-image-wrapper" aria-hidden="true">
-            <svg class="bottom-image" viewBox="0 0 1920 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M0 80 Q480 180 960 80T1920 80V180H0Z" fill="#b74b4b"/>
-                <path d="M0 120 Q480 20 960 120T1920 120V180H0Z" fill="#000"/>
-            </svg>
+    <!-- Decorative Themed SVG Bottom (above footer) -->
+    <div class="bottom-image-wrapper" aria-hidden="true">
+        <svg class="bottom-image" viewBox="0 0 1920 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 80 Q480 180 960 80T1920 80V180H0Z" fill="#b74b4b"/>
+            <path d="M0 120 Q480 20 960 120T1920 120V180H0Z" fill="#000"/>
+        </svg>
+    </div>
+
+    <footer class="footer" id="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Vijay's Portfolio</h3>
+          <p>Thanks for visiting my portfolio! I build cloud-native, secure, and scalable automation platforms. Reach out to collaborate or discuss new opportunities.</p>
+          <p>Email: <a href="mailto:vijay.kakade@example.com">vijay.kakade@example.com</a></p>
+          <p>Location: Pune, India</p>
         </div>
+
+        <div class="box">
+          <h3>Quick Links</h3>
+          <a href="#home"><i class="fas fa-chevron-circle-right"></i> Home</a>
+          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
+          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> Experience</a>
+          <a href="#certifications"><i class="fas fa-chevron-circle-right"></i> Certifications</a>
+          <a href="#projects"><i class="fas fa-chevron-circle-right"></i> Projects</a>
+          <a href="#contact"><i class="fas fa-chevron-circle-right"></i> Contact</a>
+        </div>
+
+        <div class="box">
+          <h3>Connect</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:vijay.kakade@example.com">vijay.kakade@example.com</a></p>
+          <p><i class="fas fa-map-marked-alt"></i> Pune, India</p>
+          <div class="share">
+            <a href="https://www.linkedin.com/in/vjkakade/" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a>
+            <a href="https://github.com/vjkakade" class="fab fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"></a>
+            <a href="https://twitter.com/vjkakade" class="fab fa-x-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/vjkakade/">Vijay Kakade</a></h1>
+    </footer>
 
     <!-- Register Service Worker -->
     <script>
@@ -570,6 +603,5 @@
             });
         }
     </script>
-</head>
-
-<body>
+</body>
+</html>

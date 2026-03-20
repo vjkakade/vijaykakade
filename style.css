@@ -1725,6 +1725,88 @@ span {
   transform: translateY(-3px);
 }
 
+.footer {
+  background: #0a0a0a;
+  color: #f1f1f1;
+  padding: 5rem 5%;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.footer .box h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer .box p,
+.footer .box a {
+  color: #ccc;
+  font-size: 1.45rem;
+  line-height: 2.2rem;
+}
+
+.footer .box a {
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .box a:hover {
+  color: #b74b4b;
+}
+
+.footer .share {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .share a {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid #b74b4b;
+  border-radius: 50%;
+  color: #b74b4b;
+  transition: all 0.3s ease;
+}
+
+.footer .share a:hover {
+  background: #b74b4b;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.footer .credit {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .footer .box-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer .box {
+    padding: 1rem 0;
+  }
+}
+}
+
 /* ===========================
    📱 FULL RESPONSIVE FIXES
    =========================== */
