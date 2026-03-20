@@ -1,3 +1,7 @@
+/* Accent red utility class for headings and highlights */
+.accent-red {
+  color: #b74b4b;
+}
 .experience-subtext,
 .certifications-subtext {
   font-size: 1.8rem;
