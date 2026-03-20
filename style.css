@@ -1,3 +1,28 @@
+/* Decorative bottom image styles */
+.bottom-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: transparent;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+.bottom-image {
+  max-width: 100vw;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 600px) {
+  .bottom-image {
+    max-width: 100vw;
+    width: 100vw;
+  }
+}
 /* Accent red utility class for headings and highlights */
 .accent-red {
   color: #b74b4b;
