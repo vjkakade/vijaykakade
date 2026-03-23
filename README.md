@@ -8,7 +8,6 @@ A modern, responsive portfolio website showcasing Vijay Kakade's DevOps, cloud i
 
 Before you begin, ensure you have the following installed:
 - **Node.js** (v16 or higher) - [Download Node.js](https://nodejs.org/)
-- **Python 3** (for local server) - [Download Python](https://python.org/)
 - **Git** (for version control) - [Download Git](https://git-scm.com/)
 
 ### Install & Run Locally
@@ -21,11 +20,8 @@ cd vijaykakade
 # Install dependencies
 npm install
 
-# Run linters (CSS & HTML validation)
-npm run lint
-
 # Start local development server
-python -m http.server 8000
+npm start
 # Open http://localhost:8000 in browser
 ```
 
@@ -153,6 +149,7 @@ This project emphasizes quality through manual testing and linting. For comprehe
 
 ### Quick Test Commands
 - **Linting**: `npm run lint` (CSS and HTML)
+- **Start Server**: `npm start`
 - **Cross-browser testing**: Manually test on Chrome, Firefox, Safari, and mobile browsers
 - **Responsive testing**: Check layouts at 375px, 768px, 1024px, and 1920px widths
 
@@ -163,6 +160,9 @@ Ensure all features (typing animation, form submission, PWA offline mode) work b
 ```bash
 # Install dev dependencies
 npm install
+
+# Start the development server
+npm start
 
 # Run all linters (CSS + HTML)
 npm run lint
@@ -299,7 +299,7 @@ Quick test:
 
 ```powershell
 npm run lint              # Verify code quality
-python -m http.server    # Start local server
+npm start                # Start local server
 # Open http://localhost:8000 and test manually
 ```
 
@@ -409,7 +409,7 @@ If form doesn't work:
 4. **Test Your Changes**
    ```bash
    npm run lint              # Check code quality
-   python -m http.server     # Start local server
+   npm start                 # Start local server
    # Test in browser at http://localhost:8000
    ```
 
@@ -515,21 +515,11 @@ npm --version
 # If not installed, download from: https://nodejs.org/
 ```
 
-**Python Server Not Working:**
-```bash
-# Alternative local servers
-npm install -g live-server
-live-server
-
-# Or use VS Code Live Server extension
-# Or use Python 2: python -m SimpleHTTPServer 8000
-```
-
 **Port Already in Use:**
 ```bash
-# Use different port
-python -m http.server 8080
-# Access at http://localhost:8080
+# Use different port by editing package.json start script
+"start": "http-server -p 8081"
+# Access at http://localhost:8081
 ```
 
 ### Browser Issues
