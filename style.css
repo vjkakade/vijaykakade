@@ -374,6 +374,9 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ===== COMPREHENSIVE BREAKPOINTS FOR ALL RESOLUTIONS ===== */
@@ -452,6 +455,34 @@ html {
   }
 }
 
+/* High DPI / Retina Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  * {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  
+  .navbar, section, .footer {
+    border-width: 0.5px;
+  }
+  
+  .skill-card, .experience-card, .certifications-list li, .project-card, .contact-form {
+    border-width: 1px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  button, a, .btn, .nav-link, .skill-card, .experience-card, .project-card {
+    padding: max(0.75rem, 16px) max(1rem, 16px);
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .skill-card:active, .experience-card:active, .project-card:active {
+    background: #111;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -462,12 +493,25 @@ html {
   font-family: Poppins, sans-serif;
 }
 
+/* Responsive media elements */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
   background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
   color: white;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ===== ISOLATED STICKY NAVBAR ===== */
@@ -476,7 +520,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.2rem 0;
+  padding: clamp(0.8rem, 2%, 1.2rem) 0;
   background-color: rgb(16 16 16 / 95%);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgb(183 75 75 / 20%);
@@ -490,7 +534,7 @@ body {
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 9%;
+  padding: 0 clamp(4%, 5%, 9%);
   width: 100%;
 }
 
@@ -656,7 +700,7 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 5rem 9%;
+  padding: clamp(3rem, 5%, 5rem) clamp(4%, 9%, 9%);
   margin-top: 120px;
   scroll-margin-top: 80px;
 }
@@ -843,18 +887,19 @@ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
+  width: clamp(3rem, 8vw, 4rem);
+  height: clamp(3rem, 8vw, 4rem);
   background-color: transparent;
-  border: 0.2rem solid #b74b4b;
-  font-size: 2rem;
+  border: 2px solid #b74b4b;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   border-radius: 50%;
-  margin: 3rem 1.5rem 3rem 0;
+  margin: 2rem clamp(0.8rem, 2vw, 1.5rem) 2rem 0;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   color: #b74b4b;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons a:focus {
   color: black;
   transform: scale(1.3) translateY(-5px);
   background-color: #b74b4b;
@@ -864,10 +909,10 @@ span {
 
 .btn {
   display: inline-block;
-  padding: 1rem 2.8rem;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 2.8rem);
   background-color: black;
   border-radius: 4rem;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   color: #b74b4b;
   letter-spacing: 0.3rem;
   font-weight: 600;
@@ -875,9 +920,12 @@ span {
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
+  min-height: 44px;
+  min-width: 44px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   transform: translateY(-3px) scale(1.03);
   background-color: #b74b4b;
   color: black;
@@ -1069,6 +1117,27 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.contact-left-content h3 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin: 0 0 0.3rem;
+}
+
+.contact-left-content a {
+  font-size: 1.8rem;
+  color: #b74b4b;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-left-content a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .mail-icon {
@@ -1127,13 +1196,19 @@ span {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1.2rem 1.5rem;
+  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
   border: 2px solid #333;
   background: rgb(255 255 255 / 2%);
   color: white;
   border-radius: 1rem;
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   transition: all 0.4s ease;
+  min-height: 44px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
 }
 
 .contact-form input:focus,
@@ -1150,15 +1225,17 @@ span {
   color: #b74b4b;
   border: 2px solid #b74b4b;
   border-radius: 4rem;
-  padding: 1rem 2.8rem;
-  font-size: 1.6rem;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
   font-weight: 600;
   letter-spacing: 0.2rem;
   cursor: pointer;
   transition: 0.3s ease;
+  min-height: 44px;
 }
 
-.contact-form .btn:hover {
+.contact-form .btn:hover,
+.contact-form .btn:focus {
   background-color: #b74b4b;
   color: black;
   box-shadow: 0 0 25px #b74b4b;
@@ -1361,13 +1438,17 @@ span {
   border: 2px solid #111;
   transition: 0.3s ease;
   box-shadow: 0 0 10px rgb(183 75 75 / 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .skill-card img {
   width: 70px;
   height: 70px;
   object-fit: contain;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem 0;
 }
 
 
@@ -1728,20 +1809,21 @@ span {
 .footer {
   background: #0a0a0a;
   color: #f1f1f1;
-  padding: 5rem 5%;
+  padding: clamp(2rem, 5%, 5rem);
+  margin-top: auto;
 }
 
 .footer .box-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
   max-width: 1200px;
   margin: 0 auto 2rem auto;
 }
 
 .footer .box h3 {
   color: #fff;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 4vw, 2rem);
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1750,39 +1832,79 @@ span {
 .footer .box p,
 .footer .box a {
   color: #ccc;
-  font-size: 1.45rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
   line-height: 2.2rem;
 }
 
 .footer .box a {
+  display: inline;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.footer .box a:not(.email-link) {
   display: block;
   margin-bottom: 0.5rem;
+}
+
+.footer .box a:hover,
+.footer .box a:focus {
+  color: #b74b4b;
+  text-decoration: underline;
+}
+
+.footer .email-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.footer .email-link {
+  display: inline;
+  color: #ccc;
   transition: color 0.3s ease;
 }
 
-.footer .box a:hover {
+.footer .email-link:hover,
+.footer .email-link:focus {
   color: #b74b4b;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer .email-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
 }
 
 .footer .share {
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  flex-wrap: wrap;
 }
 
 .footer .share a {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: clamp(2.4rem, 8vw, 3.2rem);
+  height: clamp(2.4rem, 8vw, 3.2rem);
   display: grid;
   place-items: center;
   border: 2px solid #b74b4b;
   border-radius: 50%;
   color: #b74b4b;
   transition: all 0.3s ease;
+  font-size: clamp(1rem, 3vw, 1.4rem);
 }
 
-.footer .share a:hover {
+.footer .share a:hover,
+.footer .share a:focus {
   background: #b74b4b;
   color: black;
   transform: translateY(-2px);
@@ -1791,8 +1913,9 @@ span {
 .footer .credit {
   text-align: center;
   color: #aaa;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   margin-top: 2rem;
+  word-break: break-word;
 }
 
 @media (max-width: 900px) {
@@ -1804,6 +1927,26 @@ span {
   .footer .box {
     padding: 1rem 0;
   }
+  
+  .footer {
+    padding: clamp(1.5rem, 4%, 3rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer .box-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .footer .share {
+    justify-content: center;
+  }
+  
+  .footer {
+    padding: 1.5rem 4%;
+  }
+}
 }
 }
 
@@ -2136,5 +2279,379 @@ span {
   .projects-container {
     width: 85%;
     max-width: 1300px;
+  }
+}
+
+/* Landscape orientation optimizations for mobile and tablets */
+@media (orientation: landscape) and (height <=500px) {
+  section {
+    min-height: auto;
+    padding: 2rem clamp(4%, 5%, 9%);
+  }
+  
+  .home {
+    gap: 2rem;
+    padding-top: 100px;
+  }
+  
+  .home-content h1 {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+  }
+  
+  .home-content h3 {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+  }
+  
+  .home-img img {
+    height: 250px;
+    width: auto;
+  }
+  
+  .navbar {
+    padding: 0.5rem 0;
+  }
+}
+
+/* Foldable devices and large phones support */
+@media (width >=1024px) and (width < 1366px) {
+  section {
+    padding: 3.5rem clamp(5%, 7%, 9%);
+  }
+}
+
+/* ============================================================
+   COMPREHENSIVE CROSS-PLATFORM & CROSS-DEVICE COMPATIBILITY
+   ============================================================ */
+
+/* ==============================================
+   1. SAFE AREA & NOTCH SUPPORT (iPhone X+, Android)
+   ============================================== */
+html {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+body {
+  padding: max(0, env(safe-area-inset-top)) max(0, env(safe-area-inset-right)) max(0, env(safe-area-inset-bottom)) max(0, env(safe-area-inset-left));
+}
+
+/* ======================= 
+   2. REDUCED MOTION SUPPORT
+   ======================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================= 
+   3. DARK MODE OPTIMIZATION
+   ======================== */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html, body {
+    color-scheme: light;
+  }
+}
+
+/* ======================= 
+   4. EXTRA SMALL DEVICES (320px minimum)
+   ======================== */
+@media (width <=320px) {
+  html {
+    font-size: 45%;
+  }
+  
+  section {
+    padding: 3rem 4% !important;
+  }
+  
+  .navbar {
+    padding: 0.4rem 0;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+  
+  button, .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+/* ======================= 
+   5. LANDSCAPE ORIENTATION OPTIMIZATIONS (Phone)
+   ======================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  section {
+    min-height: auto;
+    padding: 2rem 4%;
+  }
+  
+  .home {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .home-img img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+  }
+  
+  .home-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .typing-text {
+    font-size: 1.8rem;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+}
+
+/* ======================= 
+   6. LANDSCAPE ORIENTATION (Tablets/Large devices)
+   ======================== */
+@media (orientation: landscape) and (min-height: 500px) and (max-width: 1024px) {
+  section {
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* ======================= 
+   7. 4K & ULTRA-HIGH RESOLUTION DISPLAYS
+   ======================== */
+@media (width >=2560px) and (height >=1440px) {
+  html {
+    font-size: 70%;
+  }
+  
+  section {
+    min-height: 70vh;
+    padding: 8rem 12%;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* ======================= 
+   8. ENHANCED TOUCH FEEDBACK
+   ======================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Improve touch feedback across all interactive elements */
+  button, a, .btn, .nav-link {
+    -webkit-tap-highlight-color: rgba(183, 75, 75, 0.2);
+    -webkit-touch-callout: none;
+  }
+  
+  .btn:active, button:active, a:active, .nav-link:active {
+    opacity: 0.8;
+    background-color: rgba(183, 75, 75, 0.1);
+  }
+  
+  /* Better form touch handling */
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 44px;
+  }
+}
+
+/* ======================= 
+   9. MOUSE/POINTER DEVICE ENHANCEMENTS
+   ======================== */
+@media (hover: hover) and (pointer: fine) {
+  /* Smooth hover transitions on desktop */
+  .btn, button, a, .nav-link, .skill-card, .project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn:hover, button:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(183, 75, 75, 0.25);
+  }
+}
+
+/* ======================= 
+   10. IMPROVED SCROLLING FOR ALL DEVICES
+   ======================== */
+html {
+  scroll-padding-top: 80px;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ======================= 
+   11. CROSS-BROWSER VENDOR PREFIXES
+   ======================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Firefox specific */
+@-moz-document url-prefix() {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ======================= 
+   12. BETTER TEXT RENDERING ACROSS OS
+   ======================== */
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+}
+
+/* ======================= 
+   13. PREVENT UNWANTED ZOOM ON INPUT FOCUS (iOS)
+   ======================== */
+@media (max-height: 500px) {
+  input, textarea, select, button {
+    font-size: 16px !important;
+  }
+}
+
+/* ======================= 
+   14. BETTER FORM SUPPORT ON ALL DEVICES
+   ======================== */
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b74b4b;
+  outline-offset: 2px;
+}
+
+textarea {
+  resize: vertical;
+  max-height: 250px;
+}
+
+/* ======================= 
+   15. IMPROVED OVERFLOW HANDLING
+   ======================== */
+body {
+  overflow-x: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======================= 
+   16. BETTER EDGE DEVICE SUPPORT (Surface Duo, Foldables)
+   ======================== */
+@media (screen-spanning: single-fold-vertical) {
+  section {
+    display: grid;
+    grid-template-columns: 100vw 100vw;
+  }
+}
+
+@media (screen-spanning: single-fold-horizontal) {
+  section {
+    display: grid;
+    grid-template-rows: 100vh 100vh;
+  }
+}
+
+/* ======================= 
+   17. WEBKIT CONSISTENCY (Chrome, Safari, Edge)
+   ======================== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b74b4b;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d45555;
+}
+
+/* ======================= 
+   18. BETTER FOCUS VISIBLE STATE
+   ======================== */
+:focus-visible {
+  outline: 2px solid #b74b4b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Firefox focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ======================= 
+   19. IMPROVED CONTRAST FOR ACCESSIBILITY
+   ======================== */
+@media (prefers-contrast: more) {
+  * {
+    border-width: 2px;
+  }
+  
+  a, button, .btn {
+    font-weight: 600;
+  }
+}
+
+/* ======================= 
+   20. VERY LARGE SCREEN OPTIMIZATION (Ultrawide)
+   ======================== */
+@media (aspect-ratio: 21/9) or (width >=3440px) {
+  section {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
