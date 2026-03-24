@@ -42,7 +42,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 - Dynamic typing animation cycling through roles
   - DevOps Engineer → Cloud Engineer → Infrastructure Specialist → etc.
 - Professional bio and introduction
-- Social media links (LinkedIn, GitHub, Twitter, Instagram)
+- Social media links (LinkedIn, GitHub, Twitter)
 - "Hire me" call-to-action button
 
 ### Skills Section
@@ -51,6 +51,8 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 - Professional skill cards with colorful SVG icons:
   - Azure, AWS, GCP, Oracle Cloud, Azure DevOps
   - Jenkins, GitHub, Terraform, CI/CD Pipelines
+  - MongoDB, IWMS (TRIRIGA), Python
+  - Cloud, Artificial Intelligence, Agentic AI, Generative AI
 - Hover effects with smooth transitions
 - Vertical "Skills" label with rotation effect
 
@@ -69,10 +71,16 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guides to deploy on:
 - Professional credentials from Oracle Cloud Infrastructure
 - Demonstrates commitment to continuous learning and expertise validation
 - Currently showcasing:
-  - Oracle AI Vector Search Certified Professional
+  - GitHub Copilot
   - Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate
   - Oracle Cloud Infrastructure 2025 Certified Generative AI Professional
+  - Oracle AI Vector Search Certified Professional
   - Oracle Cloud Infrastructure 2025 Certified DevOps Professional
+  - Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional
+  - Oracle Cloud Infrastructure 2025 Certified Architect Associate
+  - Redhat Certified Engineer
+  - Novell Certified Network +
+  - Microsoft Certified IT Professional
 
 ## 🤝 Contributing
 
@@ -126,15 +134,15 @@ vijaykakade/
 │   ├── copilot-instructions.md  # AI agent development guide
 │   └── workflows/lint.yml       # CI/CD linting automation
 ├── images/                       # Skill icons (SVG)
-│   ├── azure.svg
-│   ├── aws.svg
-│   ├── gcp.svg
-│   ├── oracle.svg
-│   ├── azure-devops.svg
-│   ├── jenkins.svg
-│   ├── github.svg
-│   ├── terraform.svg
-│   └── cicd.svg
+│   ├── azure.png
+│   ├── aws.png
+│   ├── gcp.png
+│   ├── oracle.png
+│   ├── azure-devops.png
+│   ├── jenkins.png
+│   ├── github.png
+│   ├── terraform.png
+│   └── cicd.png
 ├── README.md                     # This file
 ├── LINTING.md                   # Linting setup and commands
 ├── TESTING.md                   # Comprehensive testing guide
@@ -208,12 +216,14 @@ Edit the `texts` array in `index.html` (around line 155):
 
 ```javascript
 const texts = [
-    " DevOps Engineer",
-    " Cloud Engineer",
-    " Infrastructure Specialist",
-    " Mountaineer",
-    " Biker Rider",
-    " Freelancer"
+    " Artificial Intelligence",
+    " Technical Support",
+    " Content Creation",
+    " DevOps Engineering",
+    " Cloud Technologies",
+    " Linux Engineering",
+    " Mountain Trekking",
+    " Freelancing"
 ];
 ```
 
@@ -630,7 +640,7 @@ Open source. Feel free to use as inspiration for your own portfolio.
 
 ---
 
-**Last Updated:** December 2025  
+**Last Updated:** March 2026  
 **Status:** ✅ Production Ready  
 **Linting:** ✅ All checks pass (0 errors)  
 **Security:** ✅ npm audit: 0 vulnerabilities
