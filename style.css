@@ -2284,3 +2284,340 @@ span {
     padding: 3.5rem clamp(5%, 7%, 9%);
   }
 }
+
+/* ============================================================
+   COMPREHENSIVE CROSS-PLATFORM & CROSS-DEVICE COMPATIBILITY
+   ============================================================ */
+
+/* ==============================================
+   1. SAFE AREA & NOTCH SUPPORT (iPhone X+, Android)
+   ============================================== */
+html {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+body {
+  padding: max(0, env(safe-area-inset-top)) max(0, env(safe-area-inset-right)) max(0, env(safe-area-inset-bottom)) max(0, env(safe-area-inset-left));
+}
+
+/* ======================= 
+   2. REDUCED MOTION SUPPORT
+   ======================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================= 
+   3. DARK MODE OPTIMIZATION
+   ======================== */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html, body {
+    color-scheme: light;
+  }
+}
+
+/* ======================= 
+   4. EXTRA SMALL DEVICES (320px minimum)
+   ======================== */
+@media (width <=320px) {
+  html {
+    font-size: 45%;
+  }
+  
+  section {
+    padding: 3rem 4% !important;
+  }
+  
+  .navbar {
+    padding: 0.4rem 0;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+  
+  button, .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+/* ======================= 
+   5. LANDSCAPE ORIENTATION OPTIMIZATIONS (Phone)
+   ======================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  section {
+    min-height: auto;
+    padding: 2rem 4%;
+  }
+  
+  .home {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .home-img img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+  }
+  
+  .home-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .typing-text {
+    font-size: 1.8rem;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+}
+
+/* ======================= 
+   6. LANDSCAPE ORIENTATION (Tablets/Large devices)
+   ======================== */
+@media (orientation: landscape) and (min-height: 500px) and (max-width: 1024px) {
+  section {
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* ======================= 
+   7. 4K & ULTRA-HIGH RESOLUTION DISPLAYS
+   ======================== */
+@media (width >=2560px) and (height >=1440px) {
+  html {
+    font-size: 70%;
+  }
+  
+  section {
+    min-height: 70vh;
+    padding: 8rem 12%;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* ======================= 
+   8. ENHANCED TOUCH FEEDBACK
+   ======================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Improve touch feedback across all interactive elements */
+  button, a, .btn, .nav-link {
+    -webkit-tap-highlight-color: rgba(183, 75, 75, 0.2);
+    -webkit-touch-callout: none;
+  }
+  
+  .btn:active, button:active, a:active, .nav-link:active {
+    opacity: 0.8;
+    background-color: rgba(183, 75, 75, 0.1);
+  }
+  
+  /* Better form touch handling */
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 44px;
+  }
+}
+
+/* ======================= 
+   9. MOUSE/POINTER DEVICE ENHANCEMENTS
+   ======================== */
+@media (hover: hover) and (pointer: fine) {
+  /* Smooth hover transitions on desktop */
+  .btn, button, a, .nav-link, .skill-card, .project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn:hover, button:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(183, 75, 75, 0.25);
+  }
+}
+
+/* ======================= 
+   10. IMPROVED SCROLLING FOR ALL DEVICES
+   ======================== */
+html {
+  scroll-padding-top: 80px;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ======================= 
+   11. CROSS-BROWSER VENDOR PREFIXES
+   ======================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Firefox specific */
+@-moz-document url-prefix() {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ======================= 
+   12. BETTER TEXT RENDERING ACROSS OS
+   ======================== */
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+}
+
+/* ======================= 
+   13. PREVENT UNWANTED ZOOM ON INPUT FOCUS (iOS)
+   ======================== */
+@media (max-height: 500px) {
+  input, textarea, select, button {
+    font-size: 16px !important;
+  }
+}
+
+/* ======================= 
+   14. BETTER FORM SUPPORT ON ALL DEVICES
+   ======================== */
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b74b4b;
+  outline-offset: 2px;
+}
+
+textarea {
+  resize: vertical;
+  max-height: 250px;
+}
+
+/* ======================= 
+   15. IMPROVED OVERFLOW HANDLING
+   ======================== */
+body {
+  overflow-x: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======================= 
+   16. BETTER EDGE DEVICE SUPPORT (Surface Duo, Foldables)
+   ======================== */
+@media (screen-spanning: single-fold-vertical) {
+  section {
+    display: grid;
+    grid-template-columns: 100vw 100vw;
+  }
+}
+
+@media (screen-spanning: single-fold-horizontal) {
+  section {
+    display: grid;
+    grid-template-rows: 100vh 100vh;
+  }
+}
+
+/* ======================= 
+   17. WEBKIT CONSISTENCY (Chrome, Safari, Edge)
+   ======================== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b74b4b;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d45555;
+}
+
+/* ======================= 
+   18. BETTER FOCUS VISIBLE STATE
+   ======================== */
+:focus-visible {
+  outline: 2px solid #b74b4b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Firefox focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ======================= 
+   19. IMPROVED CONTRAST FOR ACCESSIBILITY
+   ======================== */
+@media (prefers-contrast: more) {
+  * {
+    border-width: 2px;
+  }
+  
+  a, button, .btn {
+    font-weight: 600;
+  }
+}
+
+/* ======================= 
+   20. VERY LARGE SCREEN OPTIMIZATION (Ultrawide)
+   ======================== */
+@media (aspect-ratio: 21/9) or (width >=3440px) {
+  section {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
